@@ -31,7 +31,168 @@
     <head>
       <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JH4BGVETPQ"></script>
-<script data-ad-client="ca-pub-5055885533215520" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async="true">
+(function() {
+    var host = 'www.themoneytizer.com';
+    var element = document.createElement('script');
+    var firstScript = document.getElementsByTagName('script')[0];
+    var url = 'https://quantcast.mgr.consensu.org'
+        .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js')
+    var uspTries = 0;
+    var uspTriesLimit = 3;
+    element.async = true;
+    element.type = 'text/javascript';
+    element.src = url;
+
+    firstScript.parentNode.insertBefore(element, firstScript);
+
+    function makeStub() {
+        var TCF_LOCATOR_NAME = '__tcfapiLocator';
+        var queue = [];
+        var win = window;
+        var cmpFrame;
+
+        function addFrame() {
+            var doc = win.document;
+            var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+            if (!otherCMP) {
+                if (doc.body) {
+                    var iframe = doc.createElement('iframe');
+
+                    iframe.style.cssText = 'display:none';
+                    iframe.name = TCF_LOCATOR_NAME;
+                    doc.body.appendChild(iframe);
+                } else {
+                    setTimeout(addFrame, 5);
+                }
+            }
+            return !otherCMP;
+        }
+
+        function tcfAPIHandler() {
+            var gdprApplies;
+            var args = arguments;
+
+            if (!args.length) {
+                return queue;
+            } else if (args[0] === 'setGdprApplies') {
+                if (
+                    args.length > 3 &&
+                    args[2] === 2 &&
+                    typeof args[3] === 'boolean'
+                ) {
+                    gdprApplies = args[3];
+                    if (typeof args[2] === 'function') {
+                        args[2]('set', true);
+                    }
+                }
+            } else if (args[0] === 'ping') {
+                var retr = {
+                    gdprApplies: gdprApplies,
+                    cmpLoaded: false,
+                    cmpStatus: 'stub'
+                };
+
+                if (typeof args[2] === 'function') {
+                    args[2](retr);
+                }
+            } else {
+                queue.push(args);
+            }
+        }
+
+        function postMessageEventHandler(event) {
+            var msgIsString = typeof event.data === 'string';
+            var json = {};
+
+            try {
+                if (msgIsString) {
+                    json = JSON.parse(event.data);
+                } else {
+                    json = event.data;
+                }
+            } catch (ignore) {}
+
+            var payload = json.__tcfapiCall;
+
+            if (payload) {
+                window.__tcfapi(
+                    payload.command,
+                    payload.version,
+                    function(retValue, success) {
+                        var returnMsg = {
+                            __tcfapiReturn: {
+                                returnValue: retValue,
+                                success: success,
+                                callId: payload.callId
+                            }
+                        };
+                        if (msgIsString) {
+                            returnMsg = JSON.stringify(returnMsg);
+                        }
+                        event.source.postMessage(returnMsg, '*');
+                    },
+                    payload.parameter
+                );
+            }
+        }
+
+        while (win) {
+            try {
+                if (win.frames[TCF_LOCATOR_NAME]) {
+                    cmpFrame = win;
+                    break;
+                }
+            } catch (ignore) {}
+
+            if (win === window.top) {
+                break;
+            }
+            win = win.parent;
+        }
+        if (!cmpFrame) {
+            addFrame();
+            win.__tcfapi = tcfAPIHandler;
+            win.addEventListener('message', postMessageEventHandler, false);
+        }
+    };
+
+    if (typeof module !== 'undefined') {
+        module.exports = makeStub;
+    } else {
+        makeStub();
+    }
+
+    var uspStubFunction = function() {
+        var arg = arguments;
+        if (typeof window.__uspapi !== uspStubFunction) {
+            setTimeout(function() {
+                if (typeof window.__uspapi !== 'undefined') {
+                    window.__uspapi.apply(window.__uspapi, arg);
+                }
+            }, 500);
+        }
+    };
+
+    var checkIfUspIsReady = function() {
+        uspTries++;
+        if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+            console.warn('USP is not accessible');
+        } else {
+            clearInterval(uspInterval);
+        }
+    };
+
+    if (typeof window.__uspapi === 'undefined') {
+        window.__uspapi = uspStubFunction;
+        var uspInterval = setInterval(checkIfUspIsReady, 6000);
+    }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -41,9 +202,98 @@
 </script>
         <title>DemonKingSwarn</title>
       
-      <link rel="stylesheet" href="https://swarnaditya.glitch.me/style.css">
+      <link rel="stylesheet" href="style.css">
+      
+      
       
         <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Courier+Prime&family=Open+Sans&display=swap">
+
+        <meta name="propeller" content="3d1c9eafb07e504990e05b32e22200fc">
+
+      
+    </head>
+    <body>
+    
+    <a href = "https://swarnaditya.glitch.me/" class = "page-heading"><h1>DemonKingSwarn</h1></a>
+		<hr>
+      <p>Hello, I am Swarnaditya, also known as DemonKingSwarn. I am a game developer, artist and programmer.</p>
+      <p>💠 Programming Languages - C, C++, C#, Lua, Java, JS, Python.</p>
+      <p> 📻 Game Engine - Unity Engine.</p>
+		<p><b>🚀 Projects:</b></p>
+		<ul>
+			<li><b>Confined</b> is an short 3D horror game made in unity which me and my team are currently working on.
+				[<a href = "https://gamejolt.com/games/Confined/557470">Follow Confined Now</a>]
+			</li>
+			<br>
+			<li>
+				<b>The Killer Cylinder</b> is a casual, FPS game about killing cubes with a cylinder, and to reach and collide with the big brain. This game was made for the Bada Soch game jam, hosted by Nikhil Malankar. [<a href = "https://gamersinunity-studio.itch.io/the-killer-cylinder">Itch.io</a>]
+			</li>
+			<br>
+      <li><b>Farty Shuttle</b> is a Flappy Bird type game which i made on stream as a 24hrs challenge. Also i made that game open source too. [<a href = "https://github.com/DemonKingSwarn/Farty-Shuttle-Source-Code">GitHub</a>]
+      </li>
+      <br>
+      <li>
+      <b>Zombie Shooter</b> is a webGL based top down shooter game made in 2 days because i am bored studying. [<a href="https://gamersinunity-studio.itch.io/zombie-shooter">Itch.io</a>] 
+      </li>
+      <br>
+      <li>
+      <b>PongExtreme</b> is a webGL based pong game extreme developed for my school assignment under 1 hour. [<a href="https://demonkingswarn.github.io/PongExtreme/">Play Now</a>]
+      </li>
+      <br>
+      <li>
+      <b>NotQuietHexagon</b> is a webGL based Super Hexagon replica developed for my school assignment under 10 minutes. [<a href="https://demonkingswarn.github.io/NotQuietHexagon">Play Now</a>]
+      </li>
+      <br>
+      <li>
+      <b>RollingForests</b> is a webGL based 3D runner game inspired by Rolling Sky and Subway Surfer. [<a href="https://gamersinunity-studio.itch.io/rollingforest">Itch.io</a>]
+      </li>
+		</ul>
+		<p><b>🔰 Other things:</b></p>
+		<p><i>This includes my other repositories.</i><p>
+			
+      <ul>
+        <li>
+          <b>Screen Recording using python</b>- self explanatory, it is a screen recorder coded in python.[<a href ="https://github.com/DemonKingSwarn/Screen_Recording_Using_Python">GitHub</a>]
+        </li>
+    <br>
+			<li>
+				<b>DemonCord Bot</b> is a Discord bot(written in NodeJS) that is based on moderation.[<a href = "https://github.com/DemonKingSwarn/DemonCord">GitHub</a>]
+			</li>
+			<br>
+        <li>
+          <b>Clock</b>- a simple clock coded in python.[<a href="https://github.com/DemonKingSwarn/Clock">GitHub</a>]
+        </li>
+        <br>
+        <li>
+          <b>Camera</b>- a simple camera coded in python.[<a href="https://github.com/DemonKingSwarn/Camera-in-python">GitHub</a>]
+        </li>
+        <br>
+        <li>
+        <b>Notepad</b>- a simple notepad coded in python.[<a href="https://github.com/DemonKingSwarn/Notepad-In-Python">GitHub</a>]
+        </li>
+        <br>
+        <li>
+        <b>DemonBrowser</b>- a simple one tab browser coded in python.[<a href="https://github.com/DemonKingSwarn/Browser-in-python">GitHub</a>]
+        </li>
+        <br>
+      </ul>
+      <br>
+      <div class = "footer">
+
+        
+		<p><b>📜 Links:</b> [<a href="https://paypal.me/demonkingswarn" class="donate">Buy Me A Coffee</a>][<a href = "https://github.com/DemonKingSwarn">GitHub</a>][<a href = "https://twitter.com/DemonKingSwarn">Twitter</a>][<a href="https://instagram.com/demonkingswarn/">Instagram</a>][<a href = "https://gamersinunity-studio.itch.io">Itch.io</a>][<a href="https://www.youtube.com/channel/UCC1yT9JzYwz6dDwLM-KWt0A">YouTube</a>][<a href="https://discord.gg/uqHnytzZHR">Discord</a>][<a href="https://www.linkedin.com/in/swarnaditya-singh-9bb732205/">LinkedIn</a>]</p>
+		<p><b>📢 Contact:</b> DemonKingSwarn@protonmail.com</p>
+		<hr>
+		<p class = "copyright">Copyright 2021 Swarnaditya Singh(DemonKingSwarn). Best Viewed With <a id = "anylink" href = "https://anybrowser.org/campaign/"><b>Any</b></a> Browser. [<a id = "themebutton" onclick = "SwitchTheme()">Light Mode</a>]</p>
+	<br>
+      </div>
+      
+     
+      
+    </body>
+  
+		<script type = "text/javascript" src = "script.js"></script>
+</html>
 
         <meta name="propeller" content="3d1c9eafb07e504990e05b32e22200fc">
 
@@ -77,7 +327,7 @@
         </li>
     <br>
 			<li>
-				<b>DemonCord Bot</b> is a Discord bot(written in NodeJS) that is based on moderation.[<a href = "https://github.com/DemonKingSwarn/DemonCord-">GitHub</a>]
+				<b>DemonCord Bot</b> is a Discord bot(written in NodeJS) that is based on moderation.[<a href = "https://github.com/DemonKingSwarn/DemonCord">GitHub</a>]
 			</li>
 			<br>
         <li>
