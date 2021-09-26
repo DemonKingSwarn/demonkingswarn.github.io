@@ -1,13 +1,25 @@
 body {
 	color: #2e2e2e;
 	text-align: justified;
-	font-family: "Courier Prime";
+    font-family: "Inconsolata", monospace;
 	width: 60%;
 	margin: auto;
 }
 
+hr {
+	background-color: #ffffff;
+}
+
 a {
-	color: #ff8000;
+	color: #0000f8;
+}
+
+a:hover:not(.page-heading):not(#anylink) {
+    color: #ffffff;
+    background-color: #000000;
+    text-decoration: none;
+    padding: 2px;
+    margin: -2px;
 }
 
 .page-heading {
@@ -31,5 +43,5 @@ a {
 
 #anylink {
 	text-decoration: none;
-	color: #08088A;
+	color: #A8080A;
 }
