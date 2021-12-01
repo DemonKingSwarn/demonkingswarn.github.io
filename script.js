@@ -39,7 +39,6 @@ window.addEventListener("resize", () => {
 });
 
 /* Switch to dark theme as soon as page loads */
-window.addEventListener("load", () => { 
-    /* Turned off for now */
+window.addEventListener("load", () => {
     SwitchTheme();
 });
