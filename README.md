@@ -1,8 +1,6 @@
 DemonKingSwarn
 ==============
 
-](https://demonkingswarn.is-a.dev/)
-
 * * *
 
 Hello, I am Swarnaditya, also known as demonkingswarn. I am a game developer and 2D artist. I am a Linux user and enthusiast.
