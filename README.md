@@ -1,5 +1,3 @@
-DemonKingSwarn                [
-
 DemonKingSwarn
 ==============
 
