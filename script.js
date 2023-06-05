@@ -1,44 +1,39 @@
-let theme = "light";
+// Home section animation
+gsap.from("#home h1", { opacity: 0, y: -50, duration: 1 });
+gsap.from("#home p", { opacity: 0, y: -50, duration: 1.2 });
+gsap.from("#home .btn", { opacity: 0, y: 50, duration: 1.4 });
 
-let light = {};
-light.background = "#ffffff";
-light.color = "#000000";
-light.anylink = "#08088A";
-light.themebutton = "Light Mode";	
+// About section animation
+gsap.from("#about h2", { opacity: 0, y: -50, duration: 1 });
+gsap.from("#about p", { opacity: 0, y: -50, duration: 1.2 });
 
-let dark = {};
-dark.background = "#000000";
-dark.color = "#ffffff";
-dark.anylink = "#ff0000";
-dark.themebutton = "Dark Mode";
+// Portfolio section animation
+gsap.from("#portfolio h2", { opacity: 0, y: -50, duration: 1 });
+gsap.from("#portfolio .portfolio-item", { opacity: 0, y: 50, stagger: 0.3 });
 
-function isMobile() {
-	return (window.innerWidth <= 800) && (window.innerHeight <= 800);
-}
+// Contact section animation
+gsap.from("#contact h2", { opacity: 0, y: -50, duration: 1 });
+gsap.from("#contact input, #contact textarea, #contact button", { opacity: 0, y: 50, stagger: 0.3 });
 
-function SwitchTheme() {
-	let current = (theme === "light") ? dark : light;
+// Navigation active link animation
+const navLinks = document.querySelectorAll("nav ul li a");
 
-	document.body.style.background = current.background;
-	document.body.style.color = current.color;
-	
-	document.getElementById("anylink").style.color = current.anylink;
-	document.getElementById("themebutton").text = current.themebutton;
-
-	theme = (theme === "light") ? "dark" : "light"; 
-}
-
-/* Dynamically set width */
-window.addEventListener("resize", () => {
-	if(isMobile()) {
-		document.body.style.width = "85%";
-	}
-	else {
-		document.body.style.width = "60%";
-	}
+navLinks.forEach(link => {
+  link.addEventListener("click", function() {
+    navLinks.forEach(navLink => navLink.classList.remove("active"));
+    this.classList.add("active");
+  });
 });
 
-/* Switch to dark theme as soon as page loads */
-window.addEventListener("load", () => {
-    SwitchTheme();
+// Button hover animation
+const buttons = document.querySelectorAll(".btn");
+
+buttons.forEach(button => {
+  button.addEventListener("mouseover", function() {
+    gsap.to(this, { scale: 1.1, duration: 0.2 });
+  });
+
+  button.addEventListener("mouseout", function() {
+    gsap.to(this, { scale: 1, duration: 0.2 });
+  });
 });
