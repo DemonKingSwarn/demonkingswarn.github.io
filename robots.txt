@@ -1,0 +1,5 @@
+User-Agent: *
+
+Disallow: /resume.pdf
+Disallow: /images/
+Disallow: /blogs/
