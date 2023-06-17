@@ -1,82 +1,49 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Image Gallery</title>
-  <style>
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .gallery-item {
-      margin: 10px;
-    }
-    
-    .gallery-item img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .gallery-item img:hover {
-      transform: scale(1.1);
-    }
-
-    .fullscreen-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      overflow: hidden;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s linear 0.2s, opacity 0.2s;
-    }
-
-    .fullscreen-container.active {
-      visibility: visible;
-      opacity: 1;
-      transition-delay: 0s;
-    }
-
-    .fullscreen-image {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="gallery">
     <div class="gallery-item">
       <img src="./img/padme.webp" alt="Image 1">
+    </div>
+    <div class="gallery-item">
       <img src="./img/landscape.webp" alt="Image 2">
+    </div>
+    <div class="gallery-item">
       <img src="./img/pearl.webp" alt="Image 3">
+    </div>
+    <div class="gallery-item">
       <img src="./img/rawqueen.webp" alt="Image 4">
+    </div>
+    <div class="gallery-item">
       <img src="./img/demon.webp" alt="Image 5">
+    </div>
+    <div class="gallery-item">
       <img src="./img/sabine.webp" alt="Image 6">
+    </div>
+    <div class="gallery-item">
       <img src="./img/uto.webp" alt="Image 7">
+    </div>
+    <div class="gallery-item">
       <img src="./img/malva.webp" alt="Image 8">
+    </div>
+    <div class="gallery-item">
       <img src="./img/sylvie.webp" alt="Image 9">
+    </div>
+    <div class="gallery-item">
+      <img src="./img/rawque.webp" alt="Image 10">
+    </div>
+    <div class="gallery-item">
+        <img src="./img/carryminati.webp" alt="Image 11">
+    </div>
+    <div class="gallery-item">
+      <img src="./img/raima.webp" alt="Image 12">
+    </div>
+    <div class="gallery-item">
+      <img src="./img/raima_2.webp" alt="Image 13">
     </div>
   </div>
 
@@ -90,9 +57,13 @@
     const fullscreenContainer = document.querySelector('.fullscreen-container');
     const fullscreenImage = document.querySelector('.fullscreen-image');
     const closeBtn = document.querySelector('.close-btn');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
 
-    galleryItems.forEach(item => {
+    galleryItems.forEach((item, index) => {
       item.addEventListener('click', () => {
+        currentIndex = index;
         const src = item.src;
         const alt = item.alt;
 
@@ -106,7 +77,22 @@
     closeBtn.addEventListener('click', () => {
       fullscreenContainer.classList.remove('active');
     });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      const src = galleryItems[currentIndex].src;
+      const alt = galleryItems[currentIndex].alt;
+      fullscreenImage.src = src;
+      fullscreenImage.alt = alt;
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      const src = galleryItems[currentIndex].src;
+      const alt = galleryItems[currentIndex].alt;
+      fullscreenImage.src = src;
+      fullscreenImage.alt = alt;
+    });
   </script>
 </body>
 </html>
-/html>
