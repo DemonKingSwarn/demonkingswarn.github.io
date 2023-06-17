@@ -139,3 +139,20 @@ body {
   color: black; /* Change color when fullscreen container is active */
 }
 
+/* Webkit based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hotpink;
+}
+
+/* Firefox */
+/* Note: Firefox does not support customizing the scrollbar colors directly, 
+   but you can use this code as a fallback for older versions of Firefox */
+scrollbar-color: hotpink #000;
