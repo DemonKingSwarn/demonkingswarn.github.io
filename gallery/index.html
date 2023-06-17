@@ -1,8 +1,112 @@
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Gallery</title>
-    </head>
-    <body>
-        <img src="https://instagram.fixr3-4.fna.fbcdn.net/v/t51.2885-15/348763952_694633059088839_6551607620114193256_n.webp?stp=dst-jpg_e35&_nc_ht=instagram.fixr3-4.fna.fbcdn.net&_nc_cat=103&_nc_ohc=QnDcpzddXe0AX-zbgjJ&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfA9KE2F6Q_148e6r7ydwckuK2N4OIzD-zTg5wnK3h7GMA&oe=64923896&_nc_sid=8721cf" />
-    </body>
+<head>
+  <title>Image Gallery</title>
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .gallery-item {
+      margin: 10px;
+    }
+    
+    .gallery-item img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.1);
+    }
+
+    .fullscreen-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      overflow: hidden;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s linear 0.2s, opacity 0.2s;
+    }
+
+    .fullscreen-container.active {
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s;
+    }
+
+    .fullscreen-image {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="./img/padme.webp" alt="Image 1">
+      <img src="./img/landscape.webp" alt="Image 2">
+      <img src="./img/pearl.webp" alt="Image 3">
+      <img src="./img/rawqueen.webp" alt="Image 4">
+      <img src="./img/demon.webp" alt="Image 5">
+      <img src="./img/sabine.webp" alt="Image 6">
+      <img src="./img/uto.webp" alt="Image 7">
+      <img src="./img/malva.webp" alt="Image 8">
+      <img src="./img/sylvie.webp" alt="Image 9">
+    </div>
+  </div>
+
+  <div class="fullscreen-container">
+    <span class="close-btn">&times;</span>
+    <img class="fullscreen-image" src="" alt="">
+  </div>
+
+  <script>
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const fullscreenContainer = document.querySelector('.fullscreen-container');
+    const fullscreenImage = document.querySelector('.fullscreen-image');
+    const closeBtn = document.querySelector('.close-btn');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const src = item.src;
+        const alt = item.alt;
+
+        fullscreenImage.src = src;
+        fullscreenImage.alt = alt;
+
+        fullscreenContainer.classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      fullscreenContainer.classList.remove('active');
+    });
+  </script>
+</body>
 </html>
+/html>
