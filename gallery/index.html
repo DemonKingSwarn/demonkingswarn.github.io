@@ -22,28 +22,31 @@
       <img src="./img/demon.webp" alt="Image 5">
     </div>
     <div class="gallery-item">
-      <img src="./img/sabine.webp" alt="Image 6">
+        <img src="./img/landscape_2.webp" alt="Image 6">
     </div>
     <div class="gallery-item">
-      <img src="./img/uto.webp" alt="Image 7">
+      <img src="./img/sabine.webp" alt="Image 7">
     </div>
     <div class="gallery-item">
-      <img src="./img/malva.webp" alt="Image 8">
+      <img src="./img/uto.webp" alt="Image 8">
     </div>
     <div class="gallery-item">
-      <img src="./img/sylvie.webp" alt="Image 9">
+      <img src="./img/malva.webp" alt="Image 9">
     </div>
     <div class="gallery-item">
-      <img src="./img/rawque.webp" alt="Image 10">
+      <img src="./img/sylvie.webp" alt="Image 10">
     </div>
     <div class="gallery-item">
-        <img src="./img/carryminati.webp" alt="Image 11">
+      <img src="./img/rawque.webp" alt="Image 11">
     </div>
     <div class="gallery-item">
-      <img src="./img/raima.webp" alt="Image 12">
+        <img src="./img/carryminati.webp" alt="Image 12">
     </div>
     <div class="gallery-item">
-      <img src="./img/raima_2.webp" alt="Image 13">
+      <img src="./img/raima.webp" alt="Image 13">
+    </div>
+    <div class="gallery-item">
+      <img src="./img/raima_2.webp" alt="Image 14">
     </div>
   </div>
 
@@ -51,48 +54,7 @@
     <span class="close-btn">&times;</span>
     <img class="fullscreen-image" src="" alt="">
   </div>
-
-  <script>
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    const fullscreenContainer = document.querySelector('.fullscreen-container');
-    const fullscreenImage = document.querySelector('.fullscreen-image');
-    const closeBtn = document.querySelector('.close-btn');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentIndex = 0;
-
-    galleryItems.forEach((item, index) => {
-      item.addEventListener('click', () => {
-        currentIndex = index;
-        const src = item.src;
-        const alt = item.alt;
-
-        fullscreenImage.src = src;
-        fullscreenImage.alt = alt;
-
-        fullscreenContainer.classList.add('active');
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      fullscreenContainer.classList.remove('active');
-    });
-
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-      const src = galleryItems[currentIndex].src;
-      const alt = galleryItems[currentIndex].alt;
-      fullscreenImage.src = src;
-      fullscreenImage.alt = alt;
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % galleryItems.length;
-      const src = galleryItems[currentIndex].src;
-      const alt = galleryItems[currentIndex].alt;
-      fullscreenImage.src = src;
-      fullscreenImage.alt = alt;
-    });
-  </script>
-</body>
+  <script src="https://unpkg.com/@resizer/dom-resizer@1.0.2/dist/dom-resizer.min.js"></script>
+  <script src="./script.js"></script>
+  </body>
 </html>
