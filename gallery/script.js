@@ -20,25 +20,33 @@ let currentIndex = 0;
       });
     });
 
+fullscreenContainer.addEventListener('click', (event) => {
+  if (event.target === fullscreenContainer) {
+    fullscreenContainer.classList.remove('active');
+  }
+});
+
     closeBtn.addEventListener('click', () => {
       fullscreenContainer.classList.remove('active');
     });
 
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-      const src = galleryItems[currentIndex].src;
-      const alt = galleryItems[currentIndex].alt;
-      fullscreenImage.src = src;
-      fullscreenImage.alt = alt;
-    });
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+  const src = galleryItems[currentIndex].src;
+  const alt = galleryItems[currentIndex].alt;
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % galleryItems.length;
-      const src = galleryItems[currentIndex].src;
-      const alt = galleryItems[currentIndex].alt;
-      fullscreenImage.src = src;
-      fullscreenImage.alt = alt;
-    });
+  fullscreenImage.src = src;
+  fullscreenImage.alt = alt;
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % galleryItems.length;
+  const src = galleryItems[currentIndex].src;
+  const alt = galleryItems[currentIndex].alt;
+
+  fullscreenImage.src = src;
+  fullscreenImage.alt = alt;
+});
 
 // Initialize Resizer
 window.addEventListener('DOMContentLoaded', () => {
