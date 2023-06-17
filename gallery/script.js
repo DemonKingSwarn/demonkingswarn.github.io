@@ -4,7 +4,8 @@ const galleryItems = document.querySelectorAll('.gallery-item img');
     const closeBtn = document.querySelector('.close-btn');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    let currentIndex = 0;
+    const toggleDarkModeBtn = document.querySelector('.toggle-dark-mode');    
+let currentIndex = 0;
 
     galleryItems.forEach((item, index) => {
       item.addEventListener('click', () => {
@@ -43,4 +44,9 @@ const galleryItems = document.querySelectorAll('.gallery-item img');
 window.addEventListener('DOMContentLoaded', () => {
   const resizer = new DomResizer();
   resizer.resize();
+});
+
+// Dark mode toggle
+toggleDarkModeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
 });

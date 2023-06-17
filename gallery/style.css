@@ -1,61 +1,120 @@
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
 .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      grid-gap: 10px;
-      justify-content: center;
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+  justify-content: center;
+}
 
-    .gallery-item {
-      margin: 10px;
-    }
+.gallery-item {
+  position: relative;
+  margin: 0;
+  padding-bottom: 100%; /* Maintain aspect ratio */
+  overflow: hidden;
+}
 
-    .gallery-item img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
 
-    .gallery-item img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
+.gallery-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
-    .fullscreen-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      overflow: hidden;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s linear 0.2s, opacity 0.2s;
-    }
+.fullscreen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--fullscreen-bg-color);
+  backdrop-filter: blur(5px); /* Add blur effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.2s, opacity 0.2s;
+}
 
-    .fullscreen-container.active {
-      visibility: visible;
-      opacity: 1;
-      transition-delay: 0s;
-    }
+.fullscreen-container.active {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
 
-    .fullscreen-image {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-    }
+.fullscreen-image {
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Add drop shadow */
+transition: filter 0.3s; /* Add transition for filter change */
+}
 
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-    }
+.fullscreen-container.active .fullscreen-image {
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8)); /* Change drop shadow when fullscreen container is active */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s; /* Add transition for color change */
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  opacity: 1;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Add additional CSS styles for dark mode here */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --fullscreen-bg-color: rgba(0, 0, 0, 0.9);
+  --fullscreen-text-color: #fff;
+}
+
+.fullscreen-container.active .close-btn {
+  color: #000; /* Change color when fullscreen container is active */
+}
