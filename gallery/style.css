@@ -1,6 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  background-color: black;
+  color: hotpink;
+}
+
+.title {
+  color: hotpink;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.subtitle {
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 10px;
 }
 
 .gallery {
@@ -26,11 +44,13 @@ body {
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.3s;
+  border-radius: 10px; /* Add rounded corners */
 }
 
 .gallery-item:hover img {
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 .fullscreen-container {
@@ -39,7 +59,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--fullscreen-bg-color);
+  background-color: rgba(0, 0, 0, 0.9); /* Black background color */
   backdrop-filter: blur(5px); /* Add blur effect */
   display: flex;
   justify-content: center;
@@ -58,11 +78,11 @@ body {
 }
 
 .fullscreen-image {
-max-width: 90%;
-max-height: 90%;
-object-fit: contain;
-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Add drop shadow */
-transition: filter 0.3s; /* Add transition for filter change */
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Add drop shadow */
+  transition: filter 0.3s; /* Add transition for filter change */
 }
 
 .fullscreen-container.active .fullscreen-image {
@@ -71,10 +91,10 @@ transition: filter 0.3s; /* Add transition for filter change */
 
 .close-btn {
   position: absolute;
-  top: 5px; /* Adjust top positioning */
-  right: 5px; /* Adjust right positioning */
-  color: #fff;
-  font-size: 30px; /* Increase font size */
+  top: 5px;
+  right: 5px;
+  color: hotpink;
+  font-size: 30px;
   cursor: pointer;
   transition: color 0.3s;
 }
@@ -85,7 +105,7 @@ transition: filter 0.3s; /* Add transition for filter change */
   top: 50%;
   transform: translateY(-50%);
   font-size: 30px;
-  color: #fff;
+  color: hotpink;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
   border-radius: 50%;
@@ -109,12 +129,13 @@ transition: filter 0.3s; /* Add transition for filter change */
 
 /* Add additional CSS styles for dark mode here */
 .dark-mode {
-  --bg-color: #121212;
-  --text-color: #fff;
+  --bg-color: black;
+  --text-color: hotpink;
   --fullscreen-bg-color: rgba(0, 0, 0, 0.9);
-  --fullscreen-text-color: #fff;
+  --fullscreen-text-color: hotpink;
 }
 
 .fullscreen-container.active .close-btn {
-  color: #000; /* Change color when fullscreen container is active */
+  color: black; /* Change color when fullscreen container is active */
 }
+
