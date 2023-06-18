@@ -1,0 +1,6 @@
+highlighter: rouge
+plugins:
+  - jekyll-feed
+title: DemonKingSwarn's Gallery
+description: Welcome to my portfolio
+author: DemonKingSwarn

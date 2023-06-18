@@ -48,13 +48,10 @@ nextBtn.addEventListener('click', () => {
   fullscreenImage.alt = alt;
 });
 
-// Initialize Resizer
-window.addEventListener('DOMContentLoaded', () => {
-  const resizer = new DomResizer();
-  resizer.resize();
-});
 
 // Dark mode toggle
 toggleDarkModeBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
+
+
