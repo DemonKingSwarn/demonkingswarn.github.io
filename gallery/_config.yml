@@ -4,3 +4,4 @@ plugins:
 title: DemonKingSwarn's Gallery
 description: Welcome to my portfolio
 author: DemonKingSwarn
+permalink: /:title:output_ext
