@@ -2,6 +2,7 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
     <loc>https://demonkingswarn.is-a.dev/</loc>
+    <lastmod>2023-06-09</lastmod>
   </sitemap>
   
   <!-- Add URLs for each page of your website -->
@@ -14,7 +15,8 @@
     <lastmod>2023-06-09</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://demonkingswarn.is-a.dev/gallery</loc>
+      <loc>https://demonkingswarn.is-a.dev/gallery</loc>
+      <lastmod>2023-06-18</lastmod>
   </sitemap>
 
   <!-- Add URLs for each individual image -->
