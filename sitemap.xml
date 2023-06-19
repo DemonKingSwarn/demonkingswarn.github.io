@@ -1,89 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="https://fitgirl-repacks.site/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
+<sitemap>
     <loc>https://demonkingswarn.is-a.dev/</loc>
-    <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
-  </url>
+  </sitemal>
   
   <!-- Add URLs for each page of your website -->
-  <url>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery</loc>
-    <priority>0.8</priority>
-    <changefreq>daily</changefreq>
-  </url>
+  </sitemap>
 
   <!-- Add URLs for each individual image -->
-  <url>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/padme.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/landscape.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/pearl.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/rawqueen.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+    
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/demon.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+    
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/landscape_2.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+  
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/sabine.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-<url>
+    
+  </sitemap>
+<sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/uto.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+ 
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/malva.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+    
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/sylvie.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/rawque.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+ 
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/carryminati.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/raima.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery/img/raima_2.webp</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
+   
+  </sitemap>
   <!-- Add more URLs for other images -->
 
 </sitemapindex>
