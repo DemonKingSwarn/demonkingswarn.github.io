@@ -6,6 +6,10 @@
   
   <!-- Add URLs for each page of your website -->
   <sitemap>
+    <loc>https://demonkingswarn.is-a.dev/resume.pdf</loc>
+    <lastmod>2023-05-19</lastmod>
+  </sitemap>
+  <sitemap>
     <loc>https://demonkingswarn.is-a.dev/gallery</loc>
   </sitemap>
 
