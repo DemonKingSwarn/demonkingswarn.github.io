@@ -4,13 +4,13 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #282a36;
-    color: #f8f8f2;
+    background-color: #000;
+    color: #fff;
     overflow-y: auto; /* Enable vertical scrolling */
 }
 
 header {
-    background-color: #44475a;
+    background-color: #ff0080;
     padding: 10px;
     text-align: center;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
@@ -20,7 +20,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #44475a;
+    background-color: #ff0080;
     overflow: hidden;
     text-align: center;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
@@ -32,14 +32,14 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    color: #f8f8f2;
+    color: #fff;
     text-decoration: none;
     padding: 10px;
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #bd93f9;
+    background-color: #ff0055;
 }
 
 #content {
@@ -51,45 +51,47 @@ nav ul li a:hover {
     flex-direction: column;
 }
 
+
+
 table {
     width: 100%;
     max-width: 600px;
-    background-color: #44475a;
+    background-color: #333;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 thead {
-    background-color: #bd93f9;
-    color: #f8f8f2;
+    background-color: #ff0080;
+    color: #fff;
 }
 
 th,
 td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #f8f8f2;
+    border-bottom: 1px solid #fff;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #6272a4;
+    background-color: #555;
 }
 
 tfoot {
-    background-color: #bd93f9;
-    color: #f8f8f2;
+    background-color: #ff0080;
+    color: #fff;
 }
 
 a {
-    color: #bd93f9; /* Dracula's purple color for the hyperlinks */
+    color: #ff0080; /* Hotpink color for the hyperlinks */
 }
 
 a:hover {
-    color: #ffb86c; /* Dracula's orange color on hover */
+    color: #ff0055; /* Darker shade of hotpink on hover */
 }
 
 footer {
-    background-color: #44475a;
+    background-color: #ff0080;
     padding: 10px;
     text-align: center;
 }
@@ -101,8 +103,8 @@ footer {
 
 .resume-link {
     display: inline-block;
-    background-color: #bd93f9;
-    color: #f8f8f2;
+    background-color: #ff0080;
+    color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -110,15 +112,15 @@ footer {
 
 .resume-link:hover {
     transform: scale(1.1);
-    background-color: #ffb86c;
-    color: #f8f8f2; /* Set the text color to white */
+    background-color: #ff0055;
+    color: #fff; /* Set the text color to white */
 }
 
 .links-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #bd93f9;
-    color: #f8f8f2;
+    background-color: #ff0080;
+    color: #fff;
     text-decoration: none;
     border-radius: 4px;
     font-size: 16px;
@@ -127,8 +129,8 @@ footer {
 
 .links-button:hover {
     transform: scale(1.1);
-    background-color: #ffb86c;
-    color: #f8f8f2;
+    background-color: #ff0055;
+    color: #fff;
 }
 
 /* Webkit based browsers (Chrome, Safari) */
@@ -137,14 +139,14 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #282a36;
+  background-color: #000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #bd93f9;
+  background-color: hotpink;
 }
 
 /* Firefox */
 /* Note: Firefox does not support customizing the scrollbar colors directly, 
    but you can use this code as a fallback for older versions of Firefox */
-scrollbar-color: #bd93f9 #282a36;
+scrollbar-color: hotpink #000;
