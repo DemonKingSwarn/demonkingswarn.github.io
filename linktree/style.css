@@ -1,47 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
-  font-family: 'Montserrat', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #282a36;
+    color: #f8f8f2;
 }
 
 header {
-  background-color: hotpink;
-  padding: 20px;
-  text-align: center;
+    background-color: #6272a4;
+    padding: 20px;
+    text-align: center;
 }
 
 h1 {
-  margin: 0;
+    margin: 0;
 }
 
 .links {
-  list-style-type: none;
-  padding: 0;
-  margin: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
 }
 
 .links li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .links li a {
-  display: block;
-  padding: 10px;
-  background-color: hotpink;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  width: 200px;
-  margin: 0 auto;
-  transition: transform 0.3s; /* Add this line to create a smooth transition effect */
+    display: block;
+    padding: 10px;
+    background-color: #6272a4;
+    color: #f8f8f2;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    transition: transform 0.3s;
 }
 
 .links li a:hover {
-  background-color: #ff69b4;
-  transform: scale(1.1); /* Add this line to scale up the button on hover */
+    background-color: #bd93f9;
+    transform: scale(1.1);
 }
 
