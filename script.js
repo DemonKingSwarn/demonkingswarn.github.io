@@ -1,39 +1,150 @@
-// Home section animation
-gsap.from("#home h1", { opacity: 0, y: -50, duration: 1 });
-gsap.from("#home p", { opacity: 0, y: -50, duration: 1.2 });
-gsap.from("#home .btn", { opacity: 0, y: 50, duration: 1.4 });
+// Sample game data
+const games = [
+    {
+        title: "Zombie Shooter",
+        year: 2021,
+        genre: "Top Down Shooter",
+        page: "https://gamersinunity-studio.itch.io/zombie-shooter"
+    },
+    {
+        title: "NotQuietHexagon",
+        year: 2021,
+        genre: "Casual",
+        page: "https://gamersinunity-studio.itch.io/notquiethexagon"
+    },
+    {
+        title: "Bad Game?",
+        year: 2021,
+        genre: "Casual",
+        page: "https://gamersinunity-studio.itch.io/bad-game"
+    },
+    {
+        title: "PongExtreme",
+        year: 2021,
+        genre: "Retro",
+        page: "https://gamersinunity-studio.itch.io/pongextreme"
+    },
+    {
+        title: "The Killer Cylinder",
+        year: 2020,
+        genre: "FPS",
+        page: "https://gamersinunity-studio.itch.io/the-killer-cylinder"
+    },
+    {
+        title: "Meteorite Mayday: Planet Panic",
+        year: 2023,
+        genre: "Isometric",
+        page: "https://gamersinunity-studio.itch.io/meteorite-mayday-planet-panic"
+    },
+    {
+        title: "Spike Hopper",
+        year: 2023,
+        genre: "Retro",
+        page: "https://gamersinunity-studio.itch.io/spike-hopper"
+    }
+    // Add more game objects as needed
+];
 
-// About section animation
-gsap.from("#about h2", { opacity: 0, y: -50, duration: 1 });
-gsap.from("#about p", { opacity: 0, y: -50, duration: 1.2 });
+// Sample skills data
+const skills = [
+    {
+        category: "Languages",
+        list: ["JavaScript", "C#", "C", "C++", "Python", "BASH", "Java"]
+    },
+    {
+        category: "Tools",
+        list: ["Unity", "Emacs", "Vim", "GIMP", "Git"]
+    },
+    // Add more skills objects as needed
+];
 
-// Portfolio section animation
-gsap.from("#portfolio h2", { opacity: 0, y: -50, duration: 1 });
-gsap.from("#portfolio .portfolio-item", { opacity: 0, y: 50, stagger: 0.3 });
+/*
+// Function to generate the game rows dynamically in the table
+function generateGameTable() {
+    const gameList = document.getElementById('gameList');
 
-// Contact section animation
-gsap.from("#contact h2", { opacity: 0, y: -50, duration: 1 });
-gsap.from("#contact input, #contact textarea, #contact button", { opacity: 0, y: 50, stagger: 0.3 });
+    games.forEach(game => {
+        const row = document.createElement('tr');
+        const titleCell = document.createElement('td');
+        const titleLink = document.createElement('a');
+        titleLink.href = game.page; // Set the hyperlink to the game's page
+        titleLink.textContent = game.title; // Set the game's title as the link text
+        titleCell.appendChild(titleLink);
+        row.appendChild(titleCell);
+        row.innerHTML += `
+            <td>${game.year}</td>
+            <td>${game.genre}</td>
+        `;
+        gameList.appendChild(row);
+    });
+}*/
 
-// Navigation active link animation
-const navLinks = document.querySelectorAll("nav ul li a");
+// Function to generate the game rows dynamically in the table
+function generateGameTable() {
+    const gameList = document.getElementById('gameList');
 
-navLinks.forEach(link => {
-  link.addEventListener("click", function() {
-    navLinks.forEach(navLink => navLink.classList.remove("active"));
-    this.classList.add("active");
-  });
-});
+    // Sort the game list based on the year in ascending order
+    games.sort((a, b) => a.year - b.year);
 
-// Button hover animation
-const buttons = document.querySelectorAll(".btn");
+    games.forEach(game => {
+        const row = document.createElement('tr');
+        const titleCell = document.createElement('td');
+        const titleLink = document.createElement('a');
+        titleLink.href = game.page; // Set the hyperlink to the game's page
+        titleLink.textContent = game.title; // Set the game's title as the link text
+        titleCell.appendChild(titleLink);
+        row.appendChild(titleCell);
+        row.innerHTML += `
+            <td>${game.year}</td>
+            <td>${game.genre}</td>
+        `;
+        gameList.appendChild(row);
+    });
+}
 
-buttons.forEach(button => {
-  button.addEventListener("mouseover", function() {
-    gsap.to(this, { scale: 1.1, duration: 0.2 });
-  });
+// Function to generate the skills rows dynamically in the table
+function generateSkillsTable() {
+    const skillsList = document.getElementById('skillsList');
 
-  button.addEventListener("mouseout", function() {
-    gsap.to(this, { scale: 1, duration: 0.2 });
-  });
-});
+    skills.forEach(skill => {
+        const row = document.createElement('tr');
+        const categoryCell = document.createElement('td');
+        categoryCell.textContent = skill.category;
+        row.appendChild(categoryCell);
+
+        const listCell = document.createElement('td');
+        const ul = document.createElement('ul');
+        skill.list.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            ul.appendChild(li);
+        });
+        listCell.appendChild(ul);
+        row.appendChild(listCell);
+
+        skillsList.appendChild(row);
+    });
+}
+
+// Function to check scroll position and show/hide footer
+function checkScrollPosition() {
+    const footer = document.querySelector('footer');
+    const scrollPosition = window.innerHeight + window.pageYOffset;
+    const footerPosition = footer.offsetTop + footer.offsetHeight;
+
+    if (scrollPosition >= footerPosition) {
+        footer.classList.add('show-footer');
+    } else {
+        footer.classList.remove('show-footer');
+    }
+}
+
+// Call the functions to generate the tables on page load
+window.onload = function() {
+    generateGameTable();
+    generateSkillsTable();
+    checkScrollPosition(); // Check initial scroll position
+
+    // Add scroll event listener to check scroll position
+    window.addEventListener('scroll', checkScrollPosition);
+};
