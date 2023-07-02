@@ -49,7 +49,7 @@ const games = [
 const skills = [
     {
         category: "Languages",
-        list: ["JavaScript", "C#", "C", "C++", "Python", "BASH", "Java"]
+        list: ["JavaScript", "C#", "C", "C++", "Python", "BASH", "Java", "Lua"]
     },
     {
         category: "Tools",
