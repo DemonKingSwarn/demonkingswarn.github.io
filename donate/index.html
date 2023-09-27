@@ -1,106 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8"/>
     <title>Donate me</title>
     <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      h1 {
-        text-align: center;
-      }
-      
-      body {
-        max-width: 800px;
-        margin: auto;
-      }
-      
-      blockquote {
-        font-style: italic;
-      }
-      
-      figure {
-        text-align: center;
-      }
-      
-      #scan_qr {
-        display: flex;
-        justify-content: space-around;
-      }
-      
-      #scan_qr img {
-        width: 150px;
-      }
-      
-      @media (max-width: 1000px) {
-        body {
-          font-size: 70%;
-          padding: 5px;
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #282a36; /* Dracula background color */
+            color: #f8f8f2; /* Dracula foreground color */
         }
-        
+
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        blockquote {
+            font-style: italic;
+        }
+
+        figure {
+            text-align: center;
+        }
+
         #scan_qr {
-          flex-wrap: wrap;
+            display: flex;
+            justify-content: space-around;
         }
-      }
-      
-      @media (max-width: 1600px) {
-        body {
-          font-size: 80%;
-          padding: 10px;
+
+        #scan_qr img {
+            width: 150px;
         }
-      }
-      
-      footer {
-        text-align: center;
-      }
+
+        @media (max-width: 1000px) {
+            body {
+                font-size: 70%;
+                padding: 5px;
+            }
+
+            #scan_qr {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 1600px) {
+            body {
+                font-size: 80%;
+                padding: 10px;
+            }
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        /* Customize link color */
+        a {
+            color: #bd93f9; /* Dracula link color */
+            text-decoration: none; /* Remove default link underline */
+        }
+
+        /* Style visited links */
+        a:visited {
+            color: #ff79c6; /* Dracula visited link color */
+        }
+
+        /* Style links on hover */
+        a:hover {
+            color: #f1fa8c; /* Dracula link hover color */
+            text-decoration: underline; /* Underline on hover (optional) */
+        }
+
+        /* Style links when clicked */
+        a:active {
+            color: #ff5555; /* Dracula link active color */
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <article>
+
+    <!-- Add the Dracula CSS file here -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dracula/2.6.0/dracula.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <article>
         <h1>~ Donate to DemonKingSwarn ~</h1>
         <p>
-        An enthusiastic game developer that creates dumb games out of passion.
+            An enthusiastic game developer that creates dumb games out of passion.
         </p>
-        <img alt="butters donation gif" src="https://media.tenor.com/2NqcbEYjU-8AAAAj/receiving-donations-butters-stotch.gif"/>
-      </article>
-      
-      <article>
+        <img alt="butters donation gif"
+             src="https://media.tenor.com/2NqcbEYjU-8AAAAj/receiving-donations-butters-stotch.gif"/>
+    </article>
+
+    <article>
         <h3>Here are some ways to donate to me</h3>
         <ul>
-          <li><b>PayPal</b> - <a href="https://paypal.me/Swarn7">https://paypal.me/Swarn7</a></li>
-          <li><b>UPI</b> - swarnaditya@paytm (for Indians)</li>
-          <li><b>Buy me a Coffee</b> - <a href="https://www.buymeacoffee.com/demonkingswarn1">https://www.buymeacoffee.com/demonkingswarn1</a></li>
+            <li><b>PayPal</b> - <a href="https://paypal.me/Swarn7">https://paypal.me/Swarn7</a></li>
+            <li><b>UPI</b> - swarnaditya@paytm (for Indians)</li>
+            <li><b>Buy me a Coffee</b> - <a href="https://www.buymeacoffee.com/demonkingswarn1">https://www.buymeacoffee.com/demonkingswarn1</a>
+            </li>
         </ul>
-      </article><br>
+    </article><br>
 
-      <article>
+    <article>
         <h3>Wanna Scan QR?</h3>
         <section id="scan_qr">
-          <figure class="qr_code">
-            <img alt="paypal qr code" src="./qr-codes/paypal.png"/>	
-            <figcaption>paypal</figcaption>
-          </figure>
-          
-          <figure class="qr_code">
-            <img alt="upi qr code" src="./qr-codes/upi.png"/>
-            <figcaption>upi</figcaption>
-          </figure>
-          
-       </section>
-      </article>
-    </div>
-    <footer>
-      <hr/>      
-      <small>visit my main site <a href="/">https://demonkingswarn.is-a.dev</a></small>	
-    </footer>
-  </body>
+            <figure class="qr_code">
+                <img alt="paypal qr code" src="./qr-codes/paypal.png"/>
+                <figcaption>paypal</figcaption>
+            </figure>
+
+            <figure class="qr_code">
+                <img alt="upi qr code" src="./qr-codes/upi.png"/>
+                <figcaption>upi</figcaption>
+            </figure>
+        </section>
+    </article>
+</div>
+<footer>
+    <hr/>
+    <small>visit my main site <a href="https://demonkingswarn.is-a.dev">https://demonkingswarn.is-a.dev</a></small>
+</footer>
+</body>
 </html>
+
