@@ -1,4 +1,0 @@
-This is a Brave Creators publisher verification file.
-
-Domain: is-a.dev
-Token: 14559fac0e6f2c447de147374cc23a81b61368f11573d5ae085a16fe54e1d8c9
