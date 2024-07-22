@@ -41,6 +41,12 @@ const games = [
         year: 2023,
         genre: "Retro",
         page: "https://gamersinunity-studio.itch.io/spike-hopper"
+    },
+    {
+        title: "Big Baby Goes Wild",
+        year: 2024,
+        genre: "Top-Down",
+        page: "https://gamersinunity-studio.itch.io/big-baby-goes-wild"
     }
     // Add more game objects as needed
 ];
