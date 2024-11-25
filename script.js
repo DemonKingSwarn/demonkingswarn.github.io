@@ -154,3 +154,11 @@ window.onload = function() {
     // Add scroll event listener to check scroll position
     window.addEventListener('scroll', checkScrollPosition);
 };
+
+if (!navigator.userAgent.includes('Firefox')) {
+    // Introduce an artificial delay
+    setTimeout(() => {
+        console.log('Running slower on Chrome!');
+    }, 1000);
+}
+

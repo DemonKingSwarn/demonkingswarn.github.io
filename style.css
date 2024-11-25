@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+* {
+    scrollbar-width: bold;
+    scrollbar-color: #bd93f9 #282a36;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -155,3 +160,8 @@ footer {
 /* Note: Firefox does not support customizing the scrollbar colors directly, 
    but you can use this code as a fallback for older versions of Firefox */
 scrollbar-color: #bd93f9 #282a36;
+
+#firefox-notice { display: none; }
+@-moz-document url-prefix() {
+        #firefox-notice { display: none; }
+}
