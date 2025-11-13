@@ -89,3 +89,27 @@ window.addEventListener('scroll', () => {
 
     parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
 });
+
+const typeWriterEffect = (elementId, text, delay = 100) => {
+    const element = document.getElementById(elementId);
+    if (!element) {
+        console.error(`Element with ID "${elementId}" not found.`);
+        return;
+    }
+    element.textContent = ''; // Clear existing text
+    let i = 0;
+    const type = () => {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, delay);
+        }
+    };
+    type();
+};
+
+// Call the typewriter effect on page load
+window.addEventListener('load', () => {
+    const textToType = "Hello, I am Swarnaditya";
+    typeWriterEffect('typewriter-text', textToType);
+});
