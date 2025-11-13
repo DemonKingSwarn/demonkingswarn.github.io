@@ -1,0 +1,21 @@
+{
+    "languages": [
+        "JavaScript",
+        "C#",
+        "C",
+        "C++",
+        "Python",
+        "BASH",
+        "Java",
+        "Lua",
+        "GDScript"
+    ],
+    "tools": [
+        "Unity",
+        "Godot",
+        "Emacs",
+        "Vim",
+        "GIMP",
+        "Git"
+    ]
+}

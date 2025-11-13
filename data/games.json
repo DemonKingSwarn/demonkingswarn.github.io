@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Zombie Shooter",
+        "year": "2021",
+        "description": "A top-down shooter where you fight hordes of zombies to survive.",
+        "url": "https://gamersinunity-studio.itch.io/zombie-shooter"
+    },
+    {
+        "title": "NotQuietHexagon",
+        "year": "2021",
+        "description": "A game where you have to make sure the ball doesn't collide with the hexagon.",
+        "url": "https://gamersinunity-studio.itch.io/notquiethexagon"
+    },
+    {
+        "title": "Bad Game?",
+        "year": "2021",
+        "description": "A casual game that challenges your perception of what a 'bad game' can be.",
+        "url": "https://gamersinunity-studio.itch.io/bad-game"
+    },
+    {
+        "title": "PongExtreme",
+        "year": "2021",
+        "description": "A modern take on the classic retro game Pong with extreme new features.",
+        "url": "https://gamersinunity-studio.itch.io/pongextreme"
+    },
+    {
+        "title": "Meteorite Mayday: Planet Panic",
+        "year": "2023",
+        "description": "This is a quick game where you need to protect the planet from a meteor shower heading your way.",
+        "url": "https://gamersinunity-studio.itch.io/meteorite-mayday-planet-panic"
+    },
+    {
+        "title": "Spike Hopper",
+        "year": "2023",
+        "description": "A flappy bird like game made for the on spot game jam hosted at IGDC.",
+        "url": "https://gamersinunity-studio.itch.io/spike-hopper"
+    },
+    {
+        "title": "Big Baby Goes Wild",
+        "year": "2024",
+        "description": "The unusually big baby has stuck on a small island, no one knows what kinds of creatures are waiting for him. He must fight them in order to survive the night.",
+        "url": "https://gamersinunity-studio.itch.io/big-baby-goes-wild"
+    },
+    {
+      "title": "SuperPacker",
+      "year": "2025",
+      "description": "An idle game about packing boxes!",
+      "url": "https://store.steampowered.com/app/3926560/SuperPacker/?snr=1_5_1100__1100&utm_source=steamwidget"
+    }
+]

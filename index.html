@@ -3,73 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://yt3.ggpht.com/a/AATXAJy8stJvLJrN0cleHvkBG4hVDcCMy3p47CZTWWtk=s900-c-k-c0xffffffff-no-rj-mo">
-    <meta name = "description" content = "This is demonkingswarn's homepage">
-    <meta name = "author" content = "swarnaditya singh">
-    <meta name = "keywords" content = "DemonKingSwarn, Swarnaditya Singh, GamersInUnity Studio">
-    <meta 
-      name="description"
-      content="My name is Swarnaditya Singh, also known as DemonKingSwarn, and I am an ambitious game programmer who has an experience of 5 years in developing and shipping games" />
-    <meta property="og:title" content="DemonKingSwarn: Gamer, Programmer, YouTuber - demonkingswarn.is-a.dev" />
-    <meta property="og:url" content="http://DemonKingSwarn.is-a.dev/" />
-    <meta property="og:site_name" content="demonkingswarn.is-a.dev" />
-    <meta
-    property="og:description"
-    content="My name is Swarnaditya Singh, also known as DemonKingSwarn, and I am an ambitious game programmer who has an experience of 5 years in developing and shipping games"
-  />
-    <meta name="og:site_name" content="DemonKingSwarn | Graphics | Code" />
-    <meta name="og:type" content="website" />
-    <meta name="google-site-verification" content="Kg4d0IRSxukjumBhd4jDiC6txVRlb-4jOfl-jT7cD4A" />
     <title>DemonKingSwarn</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="https://yt3.ggpht.com/a/AATXAJy8stJvLJrN0cleHvkBG4hVDcCMy3p47CZTWWtk=s900-c-k-c0xffffffff-no-rj-mo" type="image/png">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
-        <h1>DemonKingSwarn</h1>
+        <nav>
+            <div class="logo">
+                <!-- h1>Swarnaditya</h1 -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
     </header>
-        <section id="content">
-        <h2>About</h2>
-        <p>Hello, I am Swarnaditya, also known as demonkingswarn. I am a game developer and 2D artist. I am a Linux user and enthusiast.</p>
-        <h2>Games</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Year</th>
-                    <th>Genre</th>
-                </tr>
-            </thead>
-            <tbody id="gameList">
-                <!-- Game rows will be dynamically added here -->
-            </tbody>
-        </table>
-        <h2>Languages and Tools</h2>
-        <table>
-            <thead>
-            </thead>
-            <tbody id="skillsList">
-                <!-- Skills rows will be dynamically added here -->
-            </tbody>
-        </table>
-        <div class="resume-button">
-            <a href="https://demonkingswarn.is-a.dev/resume.pdf" class="resume-link">Download Resume</a>
-        </div>
-        <div class="connect-section">
-        <h2>Connect with Me</h2>
-        <p>Feel free to connect with me on social media.</p>
-        <a href="https://demonkingswarn.is-a.dev/linktree" class="links-button">Links</a>
-    </div>
-    </section>
 
-  <div id="firefox-notice">
-            This site is best viewed in Firefox. Download it <a href="https://www.mozilla.org/firefox/">here</a>.
-  </div>
+    <main>
+        <section id="hero">
+            <div class="parallax-bg"></div>
+            <div class="hero-text">
+                <h2>Hello, I am Swarnaditya</h2>
+                <p>A passionate Game Developer and 2D Artist.</p>
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="resume.pdf" class="btn" target="_blank">View My Resume</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Also known as demonkingswarn. I am a game developer and 2D artist. I am a Linux user and enthusiast.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>My Games</h2>
+                <div class="projects-grid">
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Languages and Tools</h2>
+                <div class="skills-grid">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Connect with Me</h2>
+                <div class="social-links">
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p><b>&copy; 2025 Swarnaditya Singh(DemonKingSwarn). All rights reserved.</b></p>
-      </footer>
+        <p>&copy; 2025 Swarnaditya. All rights reserved.</p>
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
-

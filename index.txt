@@ -1,0 +1,61 @@
+     ______        ___    ____  _   _ 
+    / ___\ \      / / \  |  _ \| \ | |
+    \___ \\ \ /\ / / _ \ | |_) |  \| |
+     ___) |\ V  V / ___ \|  _ <| |\  |
+    |____/  \_/\_/_/   \_\_| \_\_| \_|
+                                  
+
+  ┌─About────────────────────────────────────────────────────────────────────────┐
+  │                                                                              │
+  │ Swarnaditya Singh - Game Developer                                           │
+  │ Also known as demonkingswarn. I am a game developer and 2D artist. I am a    │
+  │ Linux user and enthusiast.                                                   │
+  │                                                                              │
+  └──────────────────────────────────────────────────────────────────────────────┘
+
+  ┌─Projects─────────────────────────────────────────────────────────────────────┐
+  │                                                                              │
+  │ - The Killer Cylinder (2020)                                                 │
+  │   A fast-paced first-person shooter where you battle against cylindrical     │
+  │   enemies.                                                                   │
+  │                                                                              │
+  │ - Zombie Shooter (2021)                                                      │
+  │   A top-down shooter where you fight hordes of zombies to survive.           │
+  │                                                                              │
+  │ - NotQuietHexagon (2021)                                                     │
+  │   A casual game where you navigate a hexagon through a maze of obstacles.    │
+  │                                                                              │
+  │ - Bad Game? (2021)                                                           │
+  │   A casual game that challenges your perception of what a 'bad game' can be. │
+  │                                                                              │
+  │ - PongExtreme (2021)                                                         │
+  │   A modern take on the classic retro game Pong with extreme new features.    │
+  │                                                                              │
+  │ - Meteorite Mayday: Planet Panic (2023)                                      │
+  │   An isometric action game where you defend your planet from a meteorite     │
+  │   shower.                                                                    │
+  │                                                                              │
+  │ - Spike Hopper (2023)                                                        │
+  │   A retro-style platformer where you hop over spikes to reach the goal.      │
+  │                                                                              │
+  │ - Big Baby Goes Wild (2024)                                                  │
+  │   A top-down adventure game where you control a giant baby causing mayhem.   │
+  │                                                                              │
+  └──────────────────────────────────────────────────────────────────────────────┘
+
+  ┌─Skills──────────────────────────┬────────────────────────────────────────────┐
+  │                                 │                                            │
+  │ Languages                       │ Tools                                      │
+  │ ------------------------------- │ ------------------------------------------ │
+  │ JavaScript, C#, C, C++, Python, │ Unity, Godot, Emacs, Vim, GIMP, Git        │
+  │ BASH, Java, Lua, GDScript       │                                            │
+  │                                 │                                            │
+  └─────────────────────────────────┴────────────────────────────────────────────┘
+
+  ┌─Connect with Me─────────────────┬─────────────────────────────────────────────────────────┐
+  │                                 │                                                         │
+  │ GitHub                          │ https://github.com/demonkingswarn                       │
+  │ itch.io                         │ https://gamersinunity-studio.itch.io/                   │
+  │ LinkedIn                        │ https://www.linkedin.com/in/swarnaditya-singh-9bb732205/│
+  │                                 │                                                         │
+  └─────────────────────────────────┴─────────────────────────────────────────────────────────┘

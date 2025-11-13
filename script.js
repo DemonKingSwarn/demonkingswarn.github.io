@@ -1,168 +1,91 @@
-// Sample game data
-const games = [
-    {
-        title: "Zombie Shooter",
-        year: 2021,
-        genre: "Top Down Shooter",
-        page: "https://gamersinunity-studio.itch.io/zombie-shooter"
-    },
-    {
-        title: "NotQuietHexagon",
-        year: 2021,
-        genre: "Casual",
-        page: "https://gamersinunity-studio.itch.io/notquiethexagon"
-    },
-    {
-        title: "Bad Game?",
-        year: 2021,
-        genre: "Casual",
-        page: "https://gamersinunity-studio.itch.io/bad-game"
-    },
-    {
-        title: "PongExtreme",
-        year: 2021,
-        genre: "Retro",
-        page: "https://gamersinunity-studio.itch.io/pongextreme"
-    },
-    {
-        title: "The Killer Cylinder",
-        year: 2020,
-        genre: "FPS",
-        page: "https://gamersinunity-studio.itch.io/the-killer-cylinder"
-    },
-    {
-        title: "Meteorite Mayday: Planet Panic",
-        year: 2023,
-        genre: "Isometric",
-        page: "https://gamersinunity-studio.itch.io/meteorite-mayday-planet-panic"
-    },
-    {
-        title: "Spike Hopper",
-        year: 2023,
-        genre: "Retro",
-        page: "https://gamersinunity-studio.itch.io/spike-hopper"
-    },
-    {
-        title: "Big Baby Goes Wild",
-        year: 2024,
-        genre: "Top-Down",
-        page: "https://gamersinunity-studio.itch.io/big-baby-goes-wild"
-    },
-    {
-      title: "SuperPacker",
-      year: 2025,
-      genre: "Idle Clicker",
-      page: "https://store.steampowered.com/app/3926560/SuperPacker/"
-    }
-];
-
-// Sample skills data
-const skills = [
-    {
-        category: "Languages",
-        list: ["JavaScript", "C#", "C", "C++", "Python", "BASH", "Java", "Lua", "GDScript"]
-    },
-    {
-        category: "Tools",
-        list: ["Unity", "Godot", "Emacs", "Vim", "GIMP", "Git"]
-    },
-];
-
-/*
-// Function to generate the game rows dynamically in the table
-function generateGameTable() {
-    const gameList = document.getElementById('gameList');
-
-    games.forEach(game => {
-        const row = document.createElement('tr');
-        const titleCell = document.createElement('td');
-        const titleLink = document.createElement('a');
-        titleLink.href = game.page; // Set the hyperlink to the game's page
-        titleLink.textContent = game.title; // Set the game's title as the link text
-        titleCell.appendChild(titleLink);
-        row.appendChild(titleCell);
-        row.innerHTML += `
-            <td>${game.year}</td>
-            <td>${game.genre}</td>
-        `;
-        gameList.appendChild(row);
-    });
-}*/
-
-// Function to generate the game rows dynamically in the table
-function generateGameTable() {
-    const gameList = document.getElementById('gameList');
-
-    // Sort the game list based on the year in ascending order
-    games.sort((a, b) => a.year - b.year);
-
-    games.forEach(game => {
-        const row = document.createElement('tr');
-        const titleCell = document.createElement('td');
-        const titleLink = document.createElement('a');
-        titleLink.href = game.page; // Set the hyperlink to the game's page
-        titleLink.textContent = game.title; // Set the game's title as the link text
-        titleCell.appendChild(titleLink);
-        row.appendChild(titleCell);
-        row.innerHTML += `
-            <td>${game.year}</td>
-            <td>${game.genre}</td>
-        `;
-        gameList.appendChild(row);
-    });
+if (navigator.userAgent.toLowerCase().includes('curl')) {
+    window.location.href = 'index.txt';
 }
 
-// Function to generate the skills rows dynamically in the table
-function generateSkillsTable() {
-    const skillsList = document.getElementById('skillsList');
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
-    skills.forEach(skill => {
-        const row = document.createElement('tr');
-        const categoryCell = document.createElement('td');
-        categoryCell.textContent = skill.category;
-        row.appendChild(categoryCell);
+    burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('nav-active');
 
-        const listCell = document.createElement('td');
-        const ul = document.createElement('ul');
-        skill.list.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            ul.appendChild(li);
+        // Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+            }
         });
-        listCell.appendChild(ul);
-        row.appendChild(listCell);
 
-        skillsList.appendChild(row);
+        // Burger Animation
+        burger.classList.toggle('toggle');
     });
 }
 
-// Function to check scroll position and show/hide footer
-function checkScrollPosition() {
-    const footer = document.querySelector('footer');
-    const scrollPosition = window.innerHeight + window.pageYOffset;
-    const footerPosition = footer.offsetTop + footer.offsetHeight;
+const displayGames = async () => {
+    const projectsGrid = document.querySelector('.projects-grid');
+    const response = await fetch('data/games.json');
+    const games = await response.json();
 
-    if (scrollPosition >= footerPosition) {
-        footer.classList.add('show-footer');
-    } else {
-        footer.classList.remove('show-footer');
-    }
+    games.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
+    games.forEach(game => {
+        const projectCard = document.createElement('a');
+        projectCard.href = game.url;
+        projectCard.classList.add('project-card');
+
+        projectCard.innerHTML = `
+            <h3>${game.title}</h3>
+            <p class="year">${game.year}</p>
+            <p>${game.description}</p>
+        `;
+
+        projectsGrid.appendChild(projectCard);
+    });
 }
 
-// Call the functions to generate the tables on page load
-window.onload = function() {
-    generateGameTable();
-    generateSkillsTable();
-    checkScrollPosition(); // Check initial scroll position
+navSlide();
+displayGames();
 
-    // Add scroll event listener to check scroll position
-    window.addEventListener('scroll', checkScrollPosition);
-};
+const displayContacts = async () => {
+    const socialLinksDiv = document.querySelector('.social-links');
+    const response = await fetch('data/contacts.json');
+    const contacts = await response.json();
 
-if (!navigator.userAgent.includes('Firefox')) {
-    // Introduce an artificial delay
-    setTimeout(() => {
-        console.log('Running slower on Chrome!');
-    }, 1000);
+    contacts.forEach(contact => {
+        const contactLink = document.createElement('a');
+        contactLink.href = contact.url;
+        contactLink.target = "_blank";
+        contactLink.textContent = contact.name;
+        socialLinksDiv.appendChild(contactLink);
+    });
 }
 
+displayContacts();
+
+const displaySkills = async () => {
+    const skillsGrid = document.querySelector('.skills-grid');
+    const response = await fetch('data/lang_and_tools.json');
+    const data = await response.json();
+
+    const skills = [...data.languages, ...data.tools];
+
+    skills.forEach(skillName => {
+        const skillDiv = document.createElement('div');
+        skillDiv.classList.add('skill');
+        skillDiv.textContent = skillName;
+        skillsGrid.appendChild(skillDiv);
+    });
+}
+
+displaySkills();
+
+window.addEventListener('scroll', () => {
+    const parallax = document.querySelector('.parallax-bg');
+    let scrollPosition = window.pageYOffset;
+
+    parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+});
