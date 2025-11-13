@@ -47,8 +47,13 @@ const games = [
         year: 2024,
         genre: "Top-Down",
         page: "https://gamersinunity-studio.itch.io/big-baby-goes-wild"
+    },
+    {
+      title: "SuperPacker",
+      year: 2025,
+      genre: "Idle Clicker",
+      page: "https://store.steampowered.com/app/3926560/SuperPacker/"
     }
-    // Add more game objects as needed
 ];
 
 // Sample skills data
@@ -61,7 +66,6 @@ const skills = [
         category: "Tools",
         list: ["Unity", "Godot", "Emacs", "Vim", "GIMP", "Git"]
     },
-    // Add more skills objects as needed
 ];
 
 /*
