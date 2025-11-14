@@ -195,6 +195,12 @@ nav {
     font-size: 0.9rem;
 }
 
+.project-card .development-type {
+    color: #bac2de; /* Subtext1 */
+    font-size: 0.9rem;
+    margin-top: 5px; /* Add some spacing */
+}
+
 .project-card .subtitle {
     font-size: 0.8rem;
     color: #a6adc8; /* Subtext0 */

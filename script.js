@@ -43,6 +43,7 @@ const displayGames = async () => {
                 <span>${game.engine}</span> | <span>${game.storefront}</span>
             </div>
             <p class="year">${game.year}</p>
+            <p class="development-type">${game.development_type}</p>
             <p>${game.description}</p>
         `;
 
