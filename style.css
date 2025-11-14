@@ -195,6 +195,16 @@ nav {
     font-size: 0.9rem;
 }
 
+.project-card .subtitle {
+    font-size: 0.8rem;
+    color: #a6adc8; /* Subtext0 */
+    margin-bottom: 10px;
+}
+
+.project-card .subtitle span {
+    margin-right: 5px;
+}
+
 /* Skills Section */
 #skills {
     background: #181825; /* Mantle */
@@ -243,9 +253,9 @@ nav {
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     background: #181825; /* Mantle */
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 /* Responsive */

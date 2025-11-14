@@ -39,6 +39,9 @@ const displayGames = async () => {
 
         projectCard.innerHTML = `
             <h3>${game.title}</h3>
+            <div class="subtitle">
+                <span>${game.engine}</span> | <span>${game.storefront}</span>
+            </div>
             <p class="year">${game.year}</p>
             <p>${game.description}</p>
         `;
