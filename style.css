@@ -132,7 +132,7 @@ nav {
 }
 
 .parallax-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?game,development') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/bg.avif') no-repeat center center/cover;
     position: absolute;
     top: 0;
     left: 0;
