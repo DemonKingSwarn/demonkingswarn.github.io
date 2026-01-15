@@ -1,42 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>404 - Page Not Found</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | DemonKingSwarn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://yt3.ggpht.com/a/AATXAJy8stJvLJrN0cleHvkBG4hVDcCMy3p47CZTWWtk=s900-c-k-c0xffffffff-no-rj-mo" type="image/png">
     <style>
-      body {
-        background-color: #282a36;
-        color: #f8f8f2;
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
-        padding: 50px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #11111b;
+        color: #cdd6f4;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        background: #181825;
+        padding: 60px 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .error-code {
+        font-size: 8rem;
+        font-weight: 700;
+        color: #cba6f7;
+        margin-bottom: 20px;
+        text-shadow: 0 0 20px rgba(203, 166, 247, 0.3);
+      }
+
       h1 {
-        font-size: 48px;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #cdd6f4;
         margin-bottom: 20px;
       }
+
       p {
-        font-size: 24px;
+        font-size: 1.2rem;
+        color: #bac2de;
+        margin-bottom: 15px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
-      .mario {
-        width: 200px;
-        margin: 50px auto;
-      }
-      a {
-        color: #ff5555;
+
+      .btn {
+        display: inline-block;
+        background: #cba6f7;
+        color: #11111b;
+        padding: 15px 30px;
+        margin-top: 30px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
         text-decoration: none;
-        font-size: 20px;
+        transition: all 0.3s ease;
       }
-      a:hover {
-        color: #8be9fd;
+
+      .btn:hover {
+        background: #f5c2e7;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(203, 166, 247, 0.4);
+      }
+
+      .emoji {
+        font-size: 4rem;
+        margin: 30px 0;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .error-code {
+          font-size: 5rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        .container {
+          padding: 40px 30px;
+        }
+
+        .emoji {
+          font-size: 3rem;
+        }
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #11111b;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #1e1e2e;
+        border-radius: 10px;
+        border: 3px solid #11111b;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #181825;
       }
     </style>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
   <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Oops! It seems you've stumbled upon a page that doesn't exist.</p>
-    <p>Don't worry! You can still return to the homepage and continue your adventure.</p>
-    <a href="/">Go to Homepage</a>
+    <div class="container">
+      <div class="error-code">404</div>
+      <h1>Page Not Found</h1>
+      <div class="emoji">🎮</div>
+      <p>Oops! It seems you've stumbled upon a page that doesn't exist.</p>
+      <p>Looks like this level hasn't been unlocked yet!</p>
+      <a href="/" class="btn">Return to Homepage</a>
+    </div>
   </body>
 </html>
 
