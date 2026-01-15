@@ -32,6 +32,7 @@ const displayGames = async () => {
 
     games.sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
+    // Add VideoGame Schema for each game
     games.forEach(game => {
         const projectCard = document.createElement('a');
         projectCard.href = game.url;
@@ -48,6 +49,30 @@ const displayGames = async () => {
         `;
 
         projectsGrid.appendChild(projectCard);
+
+        // Add JSON-LD Schema for each game
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "VideoGame",
+            "name": game.title,
+            "description": game.description,
+            "url": game.url,
+            "gamePlatform": game.storefront === "Steam" ? "PC" : "Web Browser",
+            "applicationCategory": "Game",
+            "author": {
+                "@type": "Person",
+                "name": "Swarnaditya Singh",
+                "alternateName": "DemonKingSwarn"
+            },
+            "datePublished": game.year,
+            "gameEngine": game.engine,
+            "creativeWorkStatus": "Published"
+        };
+
+        const scriptTag = document.createElement('script');
+        scriptTag.type = 'application/ld+json';
+        scriptTag.textContent = JSON.stringify(schema);
+        document.head.appendChild(scriptTag);
     });
 }
 
