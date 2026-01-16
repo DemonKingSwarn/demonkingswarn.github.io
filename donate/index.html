@@ -4,173 +4,292 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Meta Tags -->
-    <title>Donate - Support DemonKingSwarn's Game Development</title>
-    <meta name="title" content="Donate - Support DemonKingSwarn's Game Development">
-    <meta name="description" content="Support DemonKingSwarn's indie game development journey. Donate via PayPal, UPI, or Ko-fi to help create more awesome games and art.">
+    <title>Donate - DemonKingSwarn</title>
+    <meta name="description" content="Support indie game development. Donate via Monero or UPI.">
     <meta name="author" content="Swarnaditya Singh">
-    <meta name="keywords" content="donate, support indie dev, game developer donation, PayPal, Ko-fi, support creator">
-    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="donate, indie dev, monero, upi">
+    <meta name="robots" content="index; follow">
     
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://demonkingswarn.is-a.dev/donate/">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://demonkingswarn.is-a.dev/donate/">
-    <meta property="og:title" content="Donate - Support DemonKingSwarn's Game Development">
-    <meta property="og:description" content="Support DemonKingSwarn's indie game development journey. Donate via PayPal, UPI, or Ko-fi.">
-    <meta property="og:image" content="https://demonkingswarn.is-a.dev/profile.jpg">
-    <meta property="og:site_name" content="DemonKingSwarn Portfolio">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://demonkingswarn.is-a.dev/donate/">
-    <meta name="twitter:title" content="Donate - Support DemonKingSwarn's Game Development">
-    <meta name="twitter:description" content="Support indie game development. Donate via PayPal, UPI, or Ko-fi.">
-    <meta name="twitter:image" content="https://demonkingswarn.is-a.dev/profile.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #282a36; /* Dracula background color */
-            color: #f8f8f2; /* Dracula foreground color */
-        }
-
-        h1 {
-            text-align: center;
+        :root {
+            --rosewater: #f5e0dc;
+            --flamingo: #f2cdcd;
+            --pink: #f5c2e7;
+            --mauve: #cba6f7;
+            --red: #f38ba8;
+            --maroon: #eba0ac;
+            --peach: #fab387;
+            --yellow: #f9e2af;
+            --green: #a6e3a1;
+            --teal: #94e2d5;
+            --sky: #89dceb;
+            --sapphire: #74c7ec;
+            --blue: #89b4fa;
+            --lavender: #b4befe;
+            --text: #cdd6f4;
+            --subtext1: #bac2de;
+            --subtext0: #a6adc8;
+            --overlay2: #9399b2;
+            --overlay1: #7f849c;
+            --overlay0: #6c7086;
+            --surface2: #585b70;
+            --surface1: #45475a;
+            --surface0: #313244;
+            --base: #1e1e2e;
+            --mantle: #181825;
+            --crust: #11111b;
         }
 
         body {
-            max-width: 800px;
-            margin: auto;
+            background-color: var(--base);
+            color: var(--text);
+            font-family: "Montserrat", -apple-system, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
         }
 
-        blockquote {
-            font-style: italic;
+        a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
-        figure {
+        a:hover {
+            color: var(--mauve);
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--rosewater);
+            margin: 0 0 8px 0;
+        }
+
+        .subtitle {
+            color: var(--subtext0);
+            font-size: 14px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--surface0);
+            margin: 25px 0;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--subtext1);
+            margin: 0 0 15px 0;
+        }
+
+        .donation-block {
+            margin-bottom: 15px;
+        }
+
+        .donation-title {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--subtext0);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .wallet-box {
+            background-color: var(--surface0);
+            border: 1px solid var(--surface1);
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            font-size: 11px;
+            color: var(--green);
+            word-break: break-all;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .wallet-box:hover {
+            background-color: var(--surface1);
+            border-color: var(--surface2);
+        }
+
+        .wallet-box.copied {
+            background-color: rgba(166, 227, 161, 0.15);
+            border-color: var(--green);
+        }
+
+        .wallet-hint {
+            font-size: 11px;
+            color: var(--overlay0);
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .qr-section {
+            margin-top: 30px;
+        }
+
+        .qr-intro {
+            font-size: 13px;
+            color: var(--subtext0);
+            margin-bottom: 15px;
+        }
+
+        .qr-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .qr-wrapper {
             text-align: center;
         }
 
-        #scan_qr {
-            display: flex;
-            justify-content: space-around;
+        .qr-wrapper img {
+            border: 1px solid var(--surface1);
+            cursor: pointer;
+            transition: border-color 0.2s;
         }
 
-        #scan_qr img {
-            width: 150px;
+        .qr-wrapper img:hover {
+            border-color: var(--blue);
         }
 
-        @media (max-width: 1000px) {
-            body {
-                font-size: 70%;
-                padding: 5px;
-            }
-
-            #scan_qr {
-                flex-wrap: wrap;
-            }
+        .qr-label {
+            font-size: 11px;
+            color: var(--overlay0);
+            margin-top: 6px;
+            text-transform: lowercase;
         }
 
-        @media (max-width: 1600px) {
-            body {
-                font-size: 80%;
-                padding: 10px;
-            }
+        .note-box {
+            margin-top: 25px;
+            padding: 12px;
+            background-color: rgba(243, 139, 168, 0.1);
+            border-left: 2px solid var(--red);
+        }
+
+        .note-text {
+            font-size: 13px;
+            color: var(--red);
+            margin: 0;
         }
 
         footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid var(--surface0);
             text-align: center;
         }
 
-        /* Customize link color */
-        a {
-            color: #bd93f9; /* Dracula link color */
-            text-decoration: none; /* Remove default link underline */
+        .hearts {
+            color: var(--red);
+            font-size: 14px;
+            letter-spacing: 2px;
         }
 
-        /* Style visited links */
-        a:visited {
-            color: #ff79c6; /* Dracula visited link color */
+        .footer-text {
+            font-size: 12px;
+            color: var(--overlay0);
+            margin-top: 10px;
         }
 
-        /* Style links on hover */
-        a:hover {
-            color: #f1fa8c; /* Dracula link hover color */
-            text-decoration: underline; /* Underline on hover (optional) */
-        }
+        @media (max-width: 500px) {
+            body {
+                padding: 25px 15px;
+            }
 
-        /* Style links when clicked */
-        a:active {
-            color: #ff5555; /* Dracula link active color */
+            .qr-images {
+                gap: 15px;
+            }
         }
     </style>
-
-    <!-- Add the Dracula CSS file here -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dracula/2.6.0/dracula.min.css" rel="stylesheet" />
 </head>
 <body>
-<div class="container">
-    <article>
-        <h1>~ Donate to DemonKingSwarn ~</h1>
-        <p>
-            An enthusiastic game developer that creates dumb games out of passion.
-        </p>
-        <img alt="butters donation gif"
-             src="https://media.tenor.com/2NqcbEYjU-8AAAAj/receiving-donations-butters-stotch.gif"/>
-    </article>
+    <div class="container">
+        <header>
+            <h1>Hey there</h1>
+            <p class="subtitle">Thanks for thinking of supporting me</p>
+        </header>
 
-    <article>
-        <h3>Here are some ways to donate to me</h3>
-        <ul>
-            <li><b>PayPal</b> - <a href="https://paypal.me/Swarn7">https://paypal.me/Swarn7</a></li>
-            <li><b>UPI</b> - rockingswarn@okhdfcbank (for Indians)</li>
-            <li><b>Buy me a Tea</b> - <a href="https://ko-fi.com/demonkingswarn">https://ko-fi.com/demonkingswarn</a></li>
-        </ul>
-        <br>
-        
-    </article>
+        <hr class="divider">
 
-    <article>
-        <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-        <script>
-            kofiWidgetOverlay.draw('demonkingswarn', {
-                'type': 'floating-chat',
-                'floating-chat.donateButton.text': 'Support me',
-                'floating-chat.donateButton.background-color': '#00b9fe',
-                'floating-chat.donateButton.text-color': '#fff'
-             });
-        </script>
-    </article>
+        <h2>Send some love</h2>
 
-    <br>
-    <article>
-        <h3>Wanna Scan QR?</h3>
-        <section id="scan_qr">
-            <figure class="qr_code">
-                <img alt="paypal qr code" src="./qr-codes/paypal.png"/>
-                <figcaption>paypal</figcaption>
-            </figure>
+        <div class="donation-block">
+            <div class="donation-title">Monero (XMR)</div>
+            <div class="wallet-box" onclick="copyToClipboard(this)">
+                48h7jB8PCN11ZpqGd5k6eB27vvez6ioNNfLXuYhb8cS8aDMZMv2AZY291MLr56xVnU1H3dAEf8R5tChaLAZa3YKj6ioepYM
+            </div>
+            <div class="wallet-hint">click to copy</div>
+        </div>
 
-            <figure class="qr_code">
-                <img alt="upi qr code" src="./qr-codes/gpay.avif"/>
-                <figcaption>upi</figcaption>
-            </figure>
-        </section>
-    </article>
-</div>
-<footer>
-    <hr/>
-    <small>visit my main site <a href="https://demonkingswarn.is-a.dev">https://demonkingswarn.is-a.dev</a></small>
-</footer>
+        <div class="donation-block">
+            <div class="donation-title">UPI (for folks in India)</div>
+            <div class="wallet-box" onclick="copyToClipboard(this)">
+                swarnaditya@superyes
+            </div>
+            <div class="wallet-hint">click to copy</div>
+        </div>
+
+        <div class="qr-section">
+            <p class="qr-intro">or scan these qr codes</p>
+            <div class="qr-images">
+                <div class="qr-wrapper">
+                    <img alt="monero qr code" src="./qr-codes/monero.png" onclick="copyAddress('monero')" width="100" height="100">
+                    <div class="qr-label">monero</div>
+                </div>
+                <div class="qr-wrapper">
+                    <img alt="upi qr code" src="./qr-codes/supermoney.jpg" onclick="copyAddress('upi')" width="100" height="100">
+                    <div class="qr-label">upi</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="note-box">
+            <p class="note-text">every bit of support means the world to me</p>
+        </div>
+
+        <footer>
+            <p><span class="hearts">♥ ♥</span></p>
+            <p class="footer-text"><a href="https://demonkingswarn.is-a.dev">my site</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(element) {
+            const text = element.childNodes[0].textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                element.classList.add('copied');
+                setTimeout(() => {
+                    element.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function copyAddress(type) {
+            const addresses = {
+                monero: '48h7jB8PCN11ZpqGd5k6eB27vvez6ioNNfLXuYhb8cS8aDMZMv2AZY291MLr56xVnU1H3dAEf8R5tChaLAZa3YKj6ioepYM',
+                upi: 'swarnaditya@superyes'
+            };
+            navigator.clipboard.writeText(addresses[type]);
+        }
+    </script>
 </body>
 </html>
-
