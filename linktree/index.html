@@ -33,31 +33,32 @@
   <!-- Favicon -->
   <link rel="icon" href="https://yt3.ggpht.com/a/AATXAJy8stJvLJrN0cleHvkBG4hVDcCMy3p47CZTWWtk=s900-c-k-c0xffffffff-no-rj-mo">
   
+  <!-- Montserrat Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <!-- Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Hello Friend</h1>
-  </header>
-  
-  <main>
-    <ul class="links">
-      <li><a href="https://demonkingswarn.is-a.dev/">Website</a></li>
-      <li><a href="https://demonkingswarn.is-a.dev/gallery">Gallery</a></li>
-      <li><a href="https://demonkingswarn.is-a.dev/recipes">Recipes</a></li>
-      <li><a href="https://demonkingswarn.is-a.dev/blog">Blog</a></li>
-      <li><a href="https://github.com/demonkingswarn">GitHub</a></li>
-      <li><a href="https://youtube.com/@demonkingswarn">YouTube</a></li>
-      <li><a href="https://instagram.com/demonkingswarn">Instagram</a></li>
-      <li><a href="https://x.com/@demonkingswarn">Twitter (X)</a></li>
-      <li><a href="https://www.linkedin.com/in/swarnaditya-singh-9bb732205/">LinkedIn</a></li>
-      <li><a href="https://whatsapp.com/channel/0029Va9uZqVKrWQwRJeooy3o">Whatsapp Channel</a></li>
-      <li><a href="https://demonkingswarn.is-a.dev/donate">Donate</a></li>
-    </ul>
+  <main class="container">
+    <header class="profile">
+      <div class="avatar">
+        <img id="profile-avatar" src="" alt="DemonKingSwarn">
+      </div>
+      <h1 id="profile-name">DemonKingSwarn</h1>
+      <p class="tagline" id="profile-tagline">Game Developer & 2D Artist</p>
+    </header>
+    
+    <nav class="links" id="links-container"></nav>
+    
+    <footer class="footer">
+      <p>Connect with me</p>
+      <div class="social-links" id="social-container"></div>
+    </footer>
   </main>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
-

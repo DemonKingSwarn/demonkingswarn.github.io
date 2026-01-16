@@ -1,0 +1,91 @@
+{
+  "profile": {
+    "name": "DemonKingSwarn",
+    "tagline": "Game Developer & 2D Artist",
+    "avatar": "https://yt3.ggpht.com/a/AATXAJy8stJvLJrN0cleHvkBG4hVDcCMy3p47CZTWWtk=s900-c-k-c0xffffffff-no-rj-mo"
+  },
+  "links": [
+    {
+      "name": "My Games",
+      "url": "https://demonkingswarn.is-a.dev/",
+      "icon": "🌐"
+    },
+    {
+      "name": "My Misc Projects",
+      "url": "https://demonkingswarn.live",
+      "icon": "🌐"
+    },
+    {
+      "name": "Gallery",
+      "url": "https://demonkingswarn.is-a.dev/gallery",
+      "icon": "🎨"
+    },
+    {
+      "name": "Recipes",
+      "url": "https://demonkingswarn.is-a.dev/recipes",
+      "icon": "🍳"
+    },
+    {
+      "name": "Blog",
+      "url": "https://demonkingswarn.is-a.dev/blog",
+      "icon": "📝"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/demonkingswarn",
+      "icon": "💻"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://youtube.com/@demonkingswarn",
+      "icon": "▶️"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/demonkingswarn",
+      "icon": "📸"
+    },
+    {
+      "name": "Twitter (X)",
+      "url": "https://x.com/@demonkingswarn",
+      "icon": "𝕏"
+    },
+    {
+      "name": "Bluesky",
+      "url": "https://bsky.app/profile/demonkingswarn.live",
+      "icon": "🦋"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/swarnaditya-singh-9bb732205/",
+      "icon": "💼"
+    },
+    {
+      "name": "Discord Server",
+      "url": "https://demonkingswarn.live/discord",
+      "icon": "📲"
+    },
+    {
+      "name": "Donate",
+      "url": "https://demonkingswarn.is-a.dev/donate",
+      "icon": "☕"
+    }
+  ],
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/demonkingswarn",
+      "label": "GH"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://youtube.com/@demonkingswarn",
+      "label": "YT"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/demonkingswarn",
+      "label": "IG"
+    }
+  ]
+}
