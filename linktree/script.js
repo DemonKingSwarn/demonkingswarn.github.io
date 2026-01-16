@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderLinks(data.links);
     renderSocialLinks(data.social);
     initAnimations();
+    initMusicPlayer();
   } catch (error) {
     console.error('Error loading social data:', error);
   }
@@ -77,4 +78,49 @@ function initAnimations() {
       }, 500);
     });
   }
+}
+
+function initMusicPlayer() {
+  const audio = document.getElementById('background-music');
+  const toggle = document.getElementById('music-toggle');
+  
+  if (!audio || !toggle) return;
+  
+  audio.volume = 0.3;
+  
+  let hasStarted = false;
+  
+  function startMusic() {
+    if (!hasStarted) {
+      hasStarted = true;
+      audio.play().catch(err => console.log('Audio play failed:', err));
+    }
+  }
+  
+  document.addEventListener('click', startMusic, { once: true });
+  document.addEventListener('touchstart', startMusic, { once: true });
+  
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    startMusic();
+    if (audio.paused) {
+      audio.play().catch(console.error);
+    } else {
+      audio.pause();
+    }
+  });
+  
+  function updateButton() {
+    if (audio.paused) {
+      toggle.classList.remove('playing');
+      toggle.querySelector('.music-icon').textContent = '♪';
+    } else {
+      toggle.classList.add('playing');
+      toggle.querySelector('.music-icon').textContent = '❚❚';
+    }
+  }
+  
+  audio.addEventListener('play', updateButton);
+  audio.addEventListener('pause', updateButton);
+  audio.addEventListener('ended', updateButton);
 }
