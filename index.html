@@ -123,7 +123,11 @@
             <div class="parallax-bg"></div>
             <div class="hero-text">
                 <h2 id="typewriter-text">Hello, I am Swarnaditya</h2>
-                <p>A passionate Game Developer and 2D Artist.</p>
+                <p id="hero-subtitle">A passionate Game Developer and 2D Artist.</p>
+                <div class="status-indicator" onclick="changeStatus()" title="Click for random status">
+                    <span id="status-dot"></span>
+                    <span id="status-text">Currently: Available for projects</span>
+                </div>
                 <a href="#projects" class="btn">View My Work</a>
                 <a href="resume.pdf" class="btn" target="_blank">View My Resume</a>
                 <br>
@@ -266,7 +270,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Swarnaditya. All rights reserved.</p>
+        <p id="footer-text">&copy; 2026 Swarnaditya. All rights reserved.</p>
+        <p id="footer-subtext" onclick="toggleFooterSecret()">Made with ☕, code, and questionable life choices</p>
     </footer>
     <script src="./script.js"></script>
 </body>

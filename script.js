@@ -2,6 +2,29 @@ if (navigator.userAgent.toLowerCase().includes('curl')) {
     window.location.href = 'index.txt';
 }
 
+console.log('%c👋 Hey there, explorer!', 'font-size: 20px; color: #cba6f7; font-weight: bold;');
+console.log('%cYou found my secret console messages! 🕵️', 'font-size: 14px; color: #f5c2e7;');
+console.log('%cFeel free to snoop around. I have nothing to hide... except maybe my embarrassing commit messages. 😅', 'font-size: 12px; color: #a6adc8;');
+
+const statusMessages = [
+    { text: "Available for projects", color: "#a6e3a1" },
+    { text: "Currently working on new games", color: "#89b4fa" },
+    { text: "Developing indie titles", color: "#f9e2af" },
+    { text: "Exploring creative ideas", color: "#cba6f7" },
+    { text: "Open to collaborations", color: "#94e2d5" }
+];
+
+let currentStatusIndex = 0;
+
+const changeStatus = () => {
+    const statusText = document.getElementById('status-text');
+    const statusDot = document.getElementById('status-dot');
+    
+    currentStatusIndex = (currentStatusIndex + 1) % statusMessages.length;
+    statusText.textContent = `Currently: ${statusMessages[currentStatusIndex].text}`;
+    statusDot.style.background = statusMessages[currentStatusIndex].color;
+};
+
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -27,53 +50,62 @@ const navSlide = () => {
 
 const displayGames = async () => {
     const projectsGrid = document.querySelector('.projects-grid');
-    const response = await fetch('data/games.json');
-    const games = await response.json();
+    try {
+        const response = await fetch('data/games.json');
+        if (!response.ok) {
+            console.error('Failed to fetch games.json:', response.status, response.statusText);
+            return;
+        }
+        const games = await response.json();
 
-    games.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+        games.sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
-    // Add VideoGame Schema for each game
-    games.forEach(game => {
-        const projectCard = document.createElement('a');
-        projectCard.href = game.url;
-        projectCard.classList.add('project-card');
+        // Add VideoGame Schema for each game
+        games.forEach(game => {
+            const projectCard = document.createElement('a');
+            projectCard.href = game.url;
+            projectCard.classList.add('project-card');
 
-        projectCard.innerHTML = `
-            <h3>${game.title}</h3>
-            <div class="subtitle">
-                <span>${game.engine}</span> | <span>${game.storefront}</span>
-            </div>
-            <p class="year">${game.year}</p>
-            <p class="development-type">${game.development_type}</p>
-            <p>${game.description}</p>
-        `;
+            projectCard.innerHTML = `
+                <h3>${game.title}</h3>
+                <div class="subtitle">
+                    <span>${game.engine}</span> | <span>${game.storefront}</span>
+                </div>
+                <p class="year">${game.year}</p>
+                <p class="development-type">${game.development_type}</p>
+                <p>${game.description}</p>
+            `;
 
-        projectsGrid.appendChild(projectCard);
+            projectsGrid.appendChild(projectCard);
 
-        // Add JSON-LD Schema for each game
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "VideoGame",
-            "name": game.title,
-            "description": game.description,
-            "url": game.url,
-            "gamePlatform": game.storefront === "Steam" ? "PC" : "Web Browser",
-            "applicationCategory": "Game",
-            "author": {
-                "@type": "Person",
-                "name": "Swarnaditya Singh",
-                "alternateName": "DemonKingSwarn"
-            },
-            "datePublished": game.year,
-            "gameEngine": game.engine,
-            "creativeWorkStatus": "Published"
-        };
+            // Add JSON-LD Schema for each game
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "VideoGame",
+                "name": game.title,
+                "description": game.description,
+                "url": game.url,
+                "gamePlatform": game.storefront === "Steam" ? "PC" : "Web Browser",
+                "applicationCategory": "Game",
+                "author": {
+                    "@type": "Person",
+                    "name": "Swarnaditya Singh",
+                    "alternateName": "DemonKingSwarn"
+                },
+                "datePublished": game.year,
+                "gameEngine": game.engine,
+                "creativeWorkStatus": "Published"
+            };
 
-        const scriptTag = document.createElement('script');
-        scriptTag.type = 'application/ld+json';
-        scriptTag.textContent = JSON.stringify(schema);
-        document.head.appendChild(scriptTag);
-    });
+            const scriptTag = document.createElement('script');
+            scriptTag.type = 'application/ld+json';
+            scriptTag.textContent = JSON.stringify(schema);
+            document.head.appendChild(scriptTag);
+        });
+        console.log(`%c🎮 Loaded ${games.length} games!`, 'color: #a6e3a1; font-size: 14px;');
+    } catch (error) {
+        console.error('Error loading games:', error);
+    }
 }
 
 navSlide();
@@ -81,36 +113,70 @@ displayGames();
 
 const displayContacts = async () => {
     const socialLinksDiv = document.querySelector('.social-links');
-    const response = await fetch('data/contacts.json');
-    const contacts = await response.json();
+    try {
+        const response = await fetch('data/contacts.json');
+        if (!response.ok) {
+            console.error('Failed to fetch contacts.json:', response.status, response.statusText);
+            return;
+        }
+        const contacts = await response.json();
 
-    contacts.forEach(contact => {
-        const contactLink = document.createElement('a');
-        contactLink.href = contact.url;
-        contactLink.target = "_blank";
-        contactLink.textContent = contact.name;
-        socialLinksDiv.appendChild(contactLink);
-    });
+        contacts.forEach(contact => {
+            const contactLink = document.createElement('a');
+            contactLink.href = contact.url;
+            contactLink.target = "_blank";
+            contactLink.textContent = contact.name;
+            socialLinksDiv.appendChild(contactLink);
+        });
+        console.log(`%c📬 Loaded ${contacts.length} contacts!`, 'color: #89b4fa; font-size: 14px;');
+    } catch (error) {
+        console.error('Error loading contacts:', error);
+    }
 }
 
 displayContacts();
 
 const displaySkills = async () => {
     const skillsGrid = document.querySelector('.skills-grid');
-    const response = await fetch('data/lang_and_tools.json');
-    const data = await response.json();
+    try {
+        const response = await fetch('data/lang_and_tools.json');
+        if (!response.ok) {
+            console.error('Failed to fetch lang_and_tools.json:', response.status, response.statusText);
+            return;
+        }
+        const data = await response.json();
 
-    const skills = [...data.languages, ...data.tools];
+        const skills = [...data.languages, ...data.tools];
 
-    skills.forEach(skillName => {
-        const skillDiv = document.createElement('div');
-        skillDiv.classList.add('skill');
-        skillDiv.textContent = skillName;
-        skillsGrid.appendChild(skillDiv);
-    });
+        skills.forEach(skillName => {
+            const skillDiv = document.createElement('div');
+            skillDiv.classList.add('skill');
+            skillDiv.textContent = skillName;
+            skillsGrid.appendChild(skillDiv);
+        });
+        console.log(`%c💪 Loaded ${skills.length} skills!`, 'color: #f9e2af; font-size: 14px;');
+    } catch (error) {
+        console.error('Error loading skills:', error);
+    }
 }
 
 displaySkills();
+
+window.addEventListener('scroll', () => {
+    const sections = scrollMessages.map(s => document.getElementById(s.section)).filter(Boolean);
+    
+    for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight / 2 && rect.bottom > 0) {
+            const msg = scrollMessages.find(s => s.section === section.id);
+            if (msg && lastScrollMessage !== msg.message) {
+                lastScrollMessage = msg.message;
+                console.log(`%c${msg.message}`, 'color: #f5c2e7; font-size: 12px;');
+            }
+            break;
+        }
+    }
+});
 
 window.addEventListener('scroll', () => {
     const parallax = document.querySelector('.parallax-bg');
@@ -141,4 +207,15 @@ const typeWriterEffect = (elementId, text, delay = 100) => {
 window.addEventListener('load', () => {
     const textToType = "Hello, I am Swarnaditya";
     typeWriterEffect('typewriter-text', textToType);
+    
+    // Add cursor blink effect
+    const cursorBlink = () => {
+        const cursor = document.getElementById('typewriter-text');
+        if (cursor) {
+            cursor.style.borderRightColor = cursor.style.borderRightColor === 'transparent' ? '#cba6f7' : 'transparent';
+        }
+    };
+    setInterval(cursorBlink, 500);
 });
+
+
