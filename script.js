@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 const glow = {
     x: canvas.width / 2,
     y: canvas.height / 2,
-    size: 400
+    size: 600
 };
 
 document.addEventListener('mousemove', (e) => {
@@ -22,8 +22,8 @@ window.addEventListener('resize', () => {
 
 function drawGlow() {
     const gradient = ctx.createRadialGradient(glow.x, glow.y, 0, glow.x, glow.y, glow.size);
-    gradient.addColorStop(0, 'rgba(203, 166, 247, 0.03)');
-    gradient.addColorStop(0.5, 'rgba(180, 190, 254, 0.02)');
+    gradient.addColorStop(0, 'rgba(203, 166, 247, 0.15)');
+    gradient.addColorStop(0.5, 'rgba(180, 190, 254, 0.08)');
     gradient.addColorStop(1, 'transparent');
 
     ctx.fillStyle = gradient;
@@ -107,3 +107,22 @@ const displaySkills = async () => {
 displayGames();
 displayContacts();
 displaySkills();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+});

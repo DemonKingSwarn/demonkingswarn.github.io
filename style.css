@@ -29,7 +29,7 @@ h1, h2, h3 {
 h2 {
     font-size: 2rem;
     margin-bottom: 32px;
-    text-align: left;
+    text-align: center;
     font-weight: 600;
 }
 
@@ -53,7 +53,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(17, 17, 27, 0.9);
+    background: rgba(17, 17, 27, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 16px 0;
@@ -67,6 +67,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1001;
 }
 
 .nav-links {
@@ -83,6 +85,74 @@ nav {
 
 .nav-links a:hover {
     color: #cdd6f4;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1002;
+    position: relative;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #a6adc8;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 61px;
+        left: 0;
+        right: 0;
+        background: rgba(17, 17, 27, 0.98);
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 32px 0;
+        transform: translateY(-120%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        list-style: none;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        color: #a6adc8;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: #cdd6f4;
+    }
 }
 
 #hero {
@@ -109,6 +179,8 @@ nav {
     position: relative;
     z-index: 1;
     max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .hero-content h1 {
@@ -129,6 +201,7 @@ nav {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn {
@@ -174,7 +247,8 @@ section {
 
 #about p {
     max-width: 680px;
-    margin-bottom: 16px;
+    margin: 0 auto 16px auto;
+    text-align: center;
 }
 
 #about strong {
@@ -190,6 +264,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
+    justify-items: center;
 }
 
 .project-card {
@@ -230,6 +305,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    justify-content: center;
 }
 
 .skill {
@@ -255,6 +331,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
 }
 
 .social-links a {
@@ -285,15 +362,83 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .mobile-menu-toggle {
+        display: flex;
     }
 
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(17, 17, 27, 0.98);
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 32px 0;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+
+    .hero-content {
+        padding: 0 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    h2 {
+        font-size: 1.6rem;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .skills-grid {
+        padding: 0 16px;
+        justify-content: center;
+    }
+
+    .social-links {
+        padding: 0 16px;
+        justify-content: center;
+    }
+
+    .social-links a {
+        padding: 12px 20px;
+        font-size: 0.95rem;
     }
 }
