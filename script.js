@@ -207,7 +207,7 @@ const typeWriterEffect = (elementId, text, delay = 100) => {
 window.addEventListener('load', () => {
     const textToType = "Hello, I am Swarnaditya";
     typeWriterEffect('typewriter-text', textToType);
-    
+
     // Add cursor blink effect
     const cursorBlink = () => {
         const cursor = document.getElementById('typewriter-text');
@@ -216,6 +216,26 @@ window.addEventListener('load', () => {
         }
     };
     setInterval(cursorBlink, 500);
+});
+
+// Cursor glow effect in hero section
+const heroSection = document.getElementById('hero');
+const cursorGlow = document.getElementById('cursor-glow');
+
+heroSection.addEventListener('mousemove', (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    const x = e.clientX - rect.left - 150; // Center the glow (300px width / 2)
+    const y = e.clientY - rect.top - 150; // Center the glow (300px height / 2)
+
+    cursorGlow.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+heroSection.addEventListener('mouseleave', () => {
+    cursorGlow.style.opacity = '0';
+});
+
+heroSection.addEventListener('mouseenter', () => {
+    cursorGlow.style.opacity = '1';
 });
 
 
